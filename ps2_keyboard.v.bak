@@ -1,0 +1,80 @@
+
+module PS2_Keyboard (
+	// Inputs
+	CLOCK_50,
+	reset,
+
+	// Bidirectionals
+	PS2_CLK,
+	PS2_DAT,
+	
+	// Outputs
+	pressed_key
+);
+
+/*****************************************************************************
+ *                           Parameter Declarations                          *
+ *****************************************************************************/
+
+
+/*****************************************************************************
+ *                             Port Declarations                             *
+ *****************************************************************************/
+
+// Inputs
+input				CLOCK_50;
+input				reset;
+
+// Bidirectionals
+inout				PS2_CLK;
+inout				PS2_DAT;
+
+// Outputs
+output	reg	[7:0] 	pressed_key
+
+/*****************************************************************************
+ *                 Internal Wires and Registers Declarations                 *
+ *****************************************************************************/
+
+// Internal Wires
+wire		[7:0]	ps2_key_data;
+wire				ps2_key_pressed;
+
+
+/*****************************************************************************
+ *                         Finite State Machine(s)                           *
+ *****************************************************************************/
+
+
+/*****************************************************************************
+ *                             Sequential Logic                              *
+ *****************************************************************************/
+
+always @(posedge CLOCK_50)
+begin
+	if (reset == 1'b0)
+		pressed_key <= 8'h00;
+	else if (ps2_key_pressed == 1'b1)
+		pressed_key <= ps2_key_data;
+end
+
+
+/*****************************************************************************
+ *                              Internal Modules                             *
+ *****************************************************************************/
+
+PS2_Controller PS2 (
+	// Inputs
+	.CLOCK_50				(CLOCK_50),
+	.reset				(~reset),
+
+	// Bidirectionals
+	.PS2_CLK			(PS2_CLK),
+ 	.PS2_DAT			(PS2_DAT),
+
+	// Outputs
+	.received_data		(ps2_key_data),
+	.received_data_en	(ps2_key_pressed)
+);
+
+endmodule
