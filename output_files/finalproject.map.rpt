@@ -1,5 +1,5 @@
 Analysis & Synthesis report for finalproject
-Fri Nov 29 04:47:22 2019
+Fri Nov 29 07:07:35 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -115,7 +115,7 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Nov 29 04:47:21 2019           ;
+; Analysis & Synthesis Status     ; Successful - Fri Nov 29 07:07:34 2019           ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
 ; Revision Name                   ; finalproject                                    ;
 ; Top-level Entity Name           ; finalproject                                    ;
@@ -246,12 +246,12 @@ refer to the applicable agreement for further details.
 +----------------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------+---------+
 ; File Name with User-Entered Path                   ; Used in Netlist ; File Type                              ; File Name with Absolute Path                                              ; Library ;
 +----------------------------------------------------+-----------------+----------------------------------------+---------------------------------------------------------------------------+---------+
+; sprites/background_mem.v                           ; yes             ; User Wizard-Generated File             ; W:/ECE241/finalproject/sprites/background_mem.v                           ;         ;
 ; rightwhite_erase.v                                 ; yes             ; User Wizard-Generated File             ; W:/ECE241/finalproject/rightwhite_erase.v                                 ;         ;
 ; middlewhite_erase.v                                ; yes             ; User Wizard-Generated File             ; W:/ECE241/finalproject/middlewhite_erase.v                                ;         ;
 ; leftwhite_erase.v                                  ; yes             ; User Wizard-Generated File             ; W:/ECE241/finalproject/leftwhite_erase.v                                  ;         ;
 ; sprites/rightwhite.v                               ; yes             ; User Wizard-Generated File             ; W:/ECE241/finalproject/sprites/rightwhite.v                               ;         ;
 ; sprites/middlewhite.v                              ; yes             ; User Wizard-Generated File             ; W:/ECE241/finalproject/sprites/middlewhite.v                              ;         ;
-; sprites/background_mem.v                           ; yes             ; User Wizard-Generated File             ; W:/ECE241/finalproject/sprites/background_mem.v                           ;         ;
 ; sprites/black_key.v                                ; yes             ; User Wizard-Generated File             ; W:/ECE241/finalproject/sprites/black_key.v                                ;         ;
 ; sprites/leftwhite.v                                ; yes             ; User Wizard-Generated File             ; W:/ECE241/finalproject/sprites/leftwhite.v                                ;         ;
 ; finalproject.v                                     ; yes             ; User Verilog HDL File                  ; W:/ECE241/finalproject/finalproject.v                                     ;         ;
@@ -337,14 +337,14 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 803            ;
+; Estimate of Logic utilization (ALMs needed) ; 819            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 1449           ;
-;     -- 7 input functions                    ; 10             ;
-;     -- 6 input functions                    ; 135            ;
-;     -- 5 input functions                    ; 226            ;
-;     -- 4 input functions                    ; 234            ;
-;     -- <=3 input functions                  ; 844            ;
+; Combinational ALUT usage for logic          ; 1448           ;
+;     -- 7 input functions                    ; 9              ;
+;     -- 6 input functions                    ; 170            ;
+;     -- 5 input functions                    ; 234            ;
+;     -- 4 input functions                    ; 222            ;
+;     -- <=3 input functions                  ; 813            ;
 ;                                             ;                ;
 ; Dedicated logic registers                   ; 539            ;
 ;                                             ;                ;
@@ -359,8 +359,8 @@ refer to the applicable agreement for further details.
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
 ; Maximum fan-out                             ; 628            ;
-; Total fan-out                               ; 10321          ;
-; Average fan-out                             ; 4.52           ;
+; Total fan-out                               ; 10438          ;
+; Average fan-out                             ; 4.57           ;
 +---------------------------------------------+----------------+
 
 
@@ -369,8 +369,8 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+--------------+
 ; Compilation Hierarchy Node                                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                            ; Entity Name                     ; Library Name ;
 +---------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+--------------+
-; |finalproject                                                 ; 1449 (51)           ; 539 (0)                   ; 266491            ; 0          ; 54   ; 0            ; |finalproject                                                                                                                                                                                                                                  ; finalproject                    ; work         ;
-;    |Audio_Controller:Audio_Controller|                        ; 267 (4)             ; 222 (4)                   ; 16384             ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller                                                                                                                                                                                                ; Audio_Controller                ; work         ;
+; |finalproject                                                 ; 1448 (51)           ; 539 (0)                   ; 266491            ; 0          ; 54   ; 0            ; |finalproject                                                                                                                                                                                                                                  ; finalproject                    ; work         ;
+;    |Audio_Controller:Audio_Controller|                        ; 268 (4)             ; 222 (4)                   ; 16384             ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller                                                                                                                                                                                                ; Audio_Controller                ; work         ;
 ;       |Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer| ; 111 (5)             ; 108 (36)                  ; 8192              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer                                                                                                                                          ; Altera_UP_Audio_In_Deserializer ; work         ;
 ;          |Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter|  ; 10 (10)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter                                                                                        ; Altera_UP_Audio_Bit_Counter     ; work         ;
 ;          |Altera_UP_SYNC_FIFO:Audio_In_Left_Channel_FIFO|     ; 48 (0)              ; 33 (0)                    ; 4096              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Left_Channel_FIFO                                                                                           ; Altera_UP_SYNC_FIFO             ; work         ;
@@ -389,7 +389,7 @@ refer to the applicable agreement for further details.
 ;                      |cntr_h2b:rd_ptr_msb|                    ; 7 (7)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated|a_dpfifo_q2a1:dpfifo|cntr_h2b:rd_ptr_msb     ; cntr_h2b                        ; work         ;
 ;                      |cntr_i2b:wr_ptr|                        ; 8 (8)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated|a_dpfifo_q2a1:dpfifo|cntr_i2b:wr_ptr         ; cntr_i2b                        ; work         ;
 ;                      |cntr_u27:usedw_counter|                 ; 8 (8)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated|a_dpfifo_q2a1:dpfifo|cntr_u27:usedw_counter  ; cntr_u27                        ; work         ;
-;       |Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|   ; 151 (57)            ; 104 (38)                  ; 8192              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer                                                                                                                                            ; Altera_UP_Audio_Out_Serializer  ; work         ;
+;       |Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|   ; 150 (56)            ; 104 (38)                  ; 8192              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer                                                                                                                                            ; Altera_UP_Audio_Out_Serializer  ; work         ;
 ;          |Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|    ; 47 (0)              ; 33 (0)                    ; 4096              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO                                                                                            ; Altera_UP_SYNC_FIFO             ; work         ;
 ;             |scfifo:Sync_FIFO|                                ; 47 (0)              ; 33 (0)                    ; 4096              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO                                                                           ; scfifo                          ; work         ;
 ;                |scfifo_7ba1:auto_generated|                   ; 47 (0)              ; 33 (0)                    ; 4096              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated                                                ; scfifo_7ba1                     ; work         ;
@@ -407,8 +407,8 @@ refer to the applicable agreement for further details.
 ;                      |cntr_i2b:wr_ptr|                        ; 8 (8)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated|a_dpfifo_q2a1:dpfifo|cntr_i2b:wr_ptr          ; cntr_i2b                        ; work         ;
 ;                      |cntr_u27:usedw_counter|                 ; 8 (8)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated|a_dpfifo_q2a1:dpfifo|cntr_u27:usedw_counter   ; cntr_u27                        ; work         ;
 ;       |Altera_UP_Clock_Edge:ADC_Left_Right_Clock_Edges|       ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:ADC_Left_Right_Clock_Edges                                                                                                                                                ; Altera_UP_Clock_Edge            ; work         ;
-;       |Altera_UP_Clock_Edge:Bit_Clock_Edges|                  ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:Bit_Clock_Edges                                                                                                                                                           ; Altera_UP_Clock_Edge            ; work         ;
-;       |Altera_UP_Clock_Edge:DAC_Left_Right_Clock_Edges|       ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:DAC_Left_Right_Clock_Edges                                                                                                                                                ; Altera_UP_Clock_Edge            ; work         ;
+;       |Altera_UP_Clock_Edge:Bit_Clock_Edges|                  ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:Bit_Clock_Edges                                                                                                                                                           ; Altera_UP_Clock_Edge            ; work         ;
+;       |Altera_UP_Clock_Edge:DAC_Left_Right_Clock_Edges|       ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:DAC_Left_Right_Clock_Edges                                                                                                                                                ; Altera_UP_Clock_Edge            ; work         ;
 ;       |Audio_Clock:Audio_Clock|                               ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Audio_Clock:Audio_Clock                                                                                                                                                                        ; Audio_Clock                     ; work         ;
 ;          |altpll:altpll_component|                            ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Audio_Clock:Audio_Clock|altpll:altpll_component                                                                                                                                                ; altpll                          ; work         ;
 ;             |Audio_Clock_altpll:auto_generated|               ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Audio_Clock:Audio_Clock|altpll:altpll_component|Audio_Clock_altpll:auto_generated                                                                                                              ; Audio_Clock_altpll              ; work         ;
@@ -422,9 +422,9 @@ refer to the applicable agreement for further details.
 ;       |I2C_Controller:u0|                                     ; 43 (43)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |finalproject|avconf:avc|I2C_Controller:u0                                                                                                                                                                                                     ; I2C_Controller                  ; work         ;
 ;    |notes:notes|                                              ; 207 (207)           ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |finalproject|notes:notes                                                                                                                                                                                                                      ; notes                           ; work         ;
 ;    |valid_key_LUT:comb_9|                                     ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|valid_key_LUT:comb_9                                                                                                                                                                                                             ; valid_key_LUT                   ; work         ;
-;    |visual:visual|                                            ; 708 (0)             ; 122 (0)                   ; 250107            ; 0          ; 0    ; 0            ; |finalproject|visual:visual                                                                                                                                                                                                                    ; visual                          ; work         ;
-;       |control:c1|                                            ; 6 (6)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|visual:visual|control:c1                                                                                                                                                                                                         ; control                         ; work         ;
-;       |datapath:d1|                                           ; 614 (161)           ; 84 (64)                   ; 19707             ; 0          ; 0    ; 0            ; |finalproject|visual:visual|datapath:d1                                                                                                                                                                                                        ; datapath                        ; work         ;
+;    |visual:visual|                                            ; 706 (0)             ; 122 (0)                   ; 250107            ; 0          ; 0    ; 0            ; |finalproject|visual:visual                                                                                                                                                                                                                    ; visual                          ; work         ;
+;       |control:c1|                                            ; 8 (8)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|visual:visual|control:c1                                                                                                                                                                                                         ; control                         ; work         ;
+;       |datapath:d1|                                           ; 610 (157)           ; 84 (64)                   ; 19707             ; 0          ; 0    ; 0            ; |finalproject|visual:visual|datapath:d1                                                                                                                                                                                                        ; datapath                        ; work         ;
 ;          |black_key:bk|                                       ; 0 (0)               ; 0 (0)                     ; 987               ; 0          ; 0    ; 0            ; |finalproject|visual:visual|datapath:d1|black_key:bk                                                                                                                                                                                           ; black_key                       ; work         ;
 ;             |altsyncram:altsyncram_component|                 ; 0 (0)               ; 0 (0)                     ; 987               ; 0          ; 0    ; 0            ; |finalproject|visual:visual|datapath:d1|black_key:bk|altsyncram:altsyncram_component                                                                                                                                                           ; altsyncram                      ; work         ;
 ;                |altsyncram_7eg1:auto_generated|               ; 0 (0)               ; 0 (0)                     ; 987               ; 0          ; 0    ; 0            ; |finalproject|visual:visual|datapath:d1|black_key:bk|altsyncram:altsyncram_component|altsyncram_7eg1:auto_generated                                                                                                                            ; altsyncram_7eg1                 ; work         ;
@@ -698,7 +698,7 @@ Note: All latches listed above may not be present at the end of synthesis due to
 ; 4:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|transfer_counter[3]                                                     ;
 ; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|data_out_shift_reg[29]                                             ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |finalproject|visual:visual|datapath:d1|colour_out[0]                                                                                                                  ;
-; 13:1               ; 16 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |finalproject|visual:visual|datapath:d1|fullcounter[9]                                                                                                                 ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |finalproject|visual:visual|datapath:d1|fullcounter[9]                                                                                                                 ;
 ; 17:1               ; 9 bits    ; 99 LEs        ; 0 LEs                ; 99 LEs                 ; Yes        ; |finalproject|visual:visual|datapath:d1|xcounter[7]                                                                                                                    ;
 ; 13:1               ; 8 bits    ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |finalproject|visual:visual|datapath:d1|ycounter[0]                                                                                                                    ;
 ; 74:1               ; 18 bits   ; 882 LEs       ; 0 LEs                ; 882 LEs                ; Yes        ; |finalproject|notes:notes|Q[1]                                                                                                                                         ;
@@ -2791,7 +2791,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;     SCLR SLD          ; 2                           ;
 ;     plain             ; 89                          ;
 ; arriav_io_obuf        ; 6                           ;
-; arriav_lcell_comb     ; 1450                        ;
+; arriav_lcell_comb     ; 1449                        ;
 ;     arith             ; 556                         ;
 ;         0 data inputs ; 34                          ;
 ;         1 data inputs ; 286                         ;
@@ -2799,16 +2799,16 @@ Note: In order to hide this table in the UI and the text report file, please set
 ;         3 data inputs ; 82                          ;
 ;         4 data inputs ; 60                          ;
 ;         5 data inputs ; 4                           ;
-;     extend            ; 10                          ;
-;         7 data inputs ; 10                          ;
+;     extend            ; 9                           ;
+;         7 data inputs ; 9                           ;
 ;     normal            ; 852                         ;
 ;         0 data inputs ; 2                           ;
 ;         1 data inputs ; 4                           ;
-;         2 data inputs ; 187                         ;
-;         3 data inputs ; 128                         ;
-;         4 data inputs ; 174                         ;
-;         5 data inputs ; 222                         ;
-;         6 data inputs ; 135                         ;
+;         2 data inputs ; 172                         ;
+;         3 data inputs ; 112                         ;
+;         4 data inputs ; 162                         ;
+;         5 data inputs ; 230                         ;
+;         6 data inputs ; 170                         ;
 ;     shared            ; 32                          ;
 ;         0 data inputs ; 4                           ;
 ;         1 data inputs ; 12                          ;
@@ -2818,8 +2818,8 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; generic_pll           ; 2                           ;
 ; stratixv_ram_block    ; 179                         ;
 ;                       ;                             ;
-; Max LUT depth         ; 40.10                       ;
-; Average LUT depth     ; 11.76                       ;
+; Max LUT depth         ; 40.80                       ;
+; Average LUT depth     ; 11.88                       ;
 +-----------------------+-----------------------------+
 
 
@@ -2828,7 +2828,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 +----------------+--------------+
 ; Partition Name ; Elapsed Time ;
 +----------------+--------------+
-; Top            ; 00:00:10     ;
+; Top            ; 00:00:11     ;
 +----------------+--------------+
 
 
@@ -2838,10 +2838,12 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Fri Nov 29 04:45:55 2019
+    Info: Processing started: Fri Nov 29 07:06:03 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off finalproject -c finalproject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file sprites/background_mem.v
+    Info (12023): Found entity 1: background_mem File: W:/ECE241/finalproject/sprites/background_mem.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file rightwhite_erase.v
     Info (12023): Found entity 1: rightwhite_erase File: W:/ECE241/finalproject/rightwhite_erase.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file middlewhite_erase.v
@@ -2852,8 +2854,6 @@ Info (12021): Found 1 design units, including 1 entities, in source file sprites
     Info (12023): Found entity 1: rightwhite File: W:/ECE241/finalproject/sprites/rightwhite.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file sprites/middlewhite.v
     Info (12023): Found entity 1: middlewhite File: W:/ECE241/finalproject/sprites/middlewhite.v Line: 39
-Info (12021): Found 1 design units, including 1 entities, in source file sprites/background_mem.v
-    Info (12023): Found entity 1: background_mem File: W:/ECE241/finalproject/sprites/background_mem.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file sprites/black_key.v
     Info (12023): Found entity 1: black_key File: W:/ECE241/finalproject/sprites/black_key.v Line: 39
 Info (12021): Found 1 design units, including 1 entities, in source file sprites/leftwhite.v
@@ -2866,9 +2866,9 @@ Info (12021): Found 6 design units, including 6 entities, in source file visual.
     Info (12023): Found entity 1: visual File: W:/ECE241/finalproject/visual.v Line: 1
     Info (12023): Found entity 2: control File: W:/ECE241/finalproject/visual.v Line: 99
     Info (12023): Found entity 3: datapath File: W:/ECE241/finalproject/visual.v Line: 143
-    Info (12023): Found entity 4: counter60hz File: W:/ECE241/finalproject/visual.v Line: 442
-    Info (12023): Found entity 5: detect_key File: W:/ECE241/finalproject/visual.v Line: 456
-    Info (12023): Found entity 6: initial_position File: W:/ECE241/finalproject/visual.v Line: 502
+    Info (12023): Found entity 4: counter60hz File: W:/ECE241/finalproject/visual.v Line: 363
+    Info (12023): Found entity 5: detect_key File: W:/ECE241/finalproject/visual.v Line: 377
+    Info (12023): Found entity 6: initial_position File: W:/ECE241/finalproject/visual.v Line: 423
 Warning (10238): Verilog Module Declaration warning at PS2_keyboard.v(13): ignored anonymous port(s) indicated by duplicate or dangling comma(s) in the port list for module "PS2_Keyboard" File: W:/ECE241/finalproject/PS2_keyboard.v Line: 13
 Info (12021): Found 3 design units, including 3 entities, in source file ps2_keyboard.v
     Info (12023): Found entity 1: PS2_Keyboard File: W:/ECE241/finalproject/PS2_keyboard.v Line: 2
@@ -2978,13 +2978,13 @@ Info (12128): Elaborating entity "altpll_80u" for hierarchy "visual:visual|vga_a
 Info (12128): Elaborating entity "vga_controller" for hierarchy "visual:visual|vga_adapter:VGA|vga_controller:controller" File: W:/ECE241/finalproject/VGA Controller/vga_adapter.v Line: 262
 Info (12128): Elaborating entity "control" for hierarchy "visual:visual|control:c1" File: W:/ECE241/finalproject/visual.v Line: 80
 Info (12128): Elaborating entity "datapath" for hierarchy "visual:visual|datapath:d1" File: W:/ECE241/finalproject/visual.v Line: 95
-Warning (10230): Verilog HDL assignment warning at visual.v(352): truncated value with size 32 to match size of target (17) File: W:/ECE241/finalproject/visual.v Line: 352
+Warning (10230): Verilog HDL assignment warning at visual.v(336): truncated value with size 32 to match size of target (17) File: W:/ECE241/finalproject/visual.v Line: 336
 Info (12128): Elaborating entity "counter60hz" for hierarchy "visual:visual|datapath:d1|counter60hz:c60" File: W:/ECE241/finalproject/visual.v Line: 165
-Warning (10230): Verilog HDL assignment warning at visual.v(452): truncated value with size 32 to match size of target (20) File: W:/ECE241/finalproject/visual.v Line: 452
+Warning (10230): Verilog HDL assignment warning at visual.v(373): truncated value with size 32 to match size of target (20) File: W:/ECE241/finalproject/visual.v Line: 373
 Info (12128): Elaborating entity "detect_key" for hierarchy "visual:visual|datapath:d1|detect_key:dk" File: W:/ECE241/finalproject/visual.v Line: 166
-Warning (10240): Verilog HDL Always Construct warning at visual.v(465): inferring latch(es) for variable "key_type", which holds its previous value in one or more paths through the always construct File: W:/ECE241/finalproject/visual.v Line: 465
-Info (10041): Inferred latch for "key_type[0]" at visual.v(475) File: W:/ECE241/finalproject/visual.v Line: 475
-Info (10041): Inferred latch for "key_type[1]" at visual.v(475) File: W:/ECE241/finalproject/visual.v Line: 475
+Warning (10240): Verilog HDL Always Construct warning at visual.v(386): inferring latch(es) for variable "key_type", which holds its previous value in one or more paths through the always construct File: W:/ECE241/finalproject/visual.v Line: 386
+Info (10041): Inferred latch for "key_type[0]" at visual.v(396) File: W:/ECE241/finalproject/visual.v Line: 396
+Info (10041): Inferred latch for "key_type[1]" at visual.v(396) File: W:/ECE241/finalproject/visual.v Line: 396
 Info (12128): Elaborating entity "initial_position" for hierarchy "visual:visual|datapath:d1|initial_position:ip" File: W:/ECE241/finalproject/visual.v Line: 167
 Info (12128): Elaborating entity "leftwhite" for hierarchy "visual:visual|datapath:d1|leftwhite:lw" File: W:/ECE241/finalproject/visual.v Line: 168
 Info (12128): Elaborating entity "altsyncram" for hierarchy "visual:visual|datapath:d1|leftwhite:lw|altsyncram:altsyncram_component" File: W:/ECE241/finalproject/sprites/leftwhite.v Line: 81
@@ -3301,9 +3301,9 @@ Warning (14284): Synthesized away the following node(s):
 Info (276014): Found 1 instances of uninferred RAM logic
     Info (276004): RAM logic "avconf:avc|Ram0" is uninferred due to inappropriate RAM size File: W:/ECE241/finalproject/avconf/avconf.v Line: 131
 Info (278001): Inferred 1 megafunctions from design logic
-    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "visual:visual|datapath:d1|Mod0" File: W:/ECE241/finalproject/visual.v Line: 351
-Info (12130): Elaborated megafunction instantiation "visual:visual|datapath:d1|lpm_divide:Mod0" File: W:/ECE241/finalproject/visual.v Line: 351
-Info (12133): Instantiated megafunction "visual:visual|datapath:d1|lpm_divide:Mod0" with the following parameter: File: W:/ECE241/finalproject/visual.v Line: 351
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "visual:visual|datapath:d1|Mod0" File: W:/ECE241/finalproject/visual.v Line: 335
+Info (12130): Elaborated megafunction instantiation "visual:visual|datapath:d1|lpm_divide:Mod0" File: W:/ECE241/finalproject/visual.v Line: 335
+Info (12133): Instantiated megafunction "visual:visual|datapath:d1|lpm_divide:Mod0" with the following parameter: File: W:/ECE241/finalproject/visual.v Line: 335
     Info (12134): Parameter "LPM_WIDTHN" = "32"
     Info (12134): Parameter "LPM_WIDTHD" = "9"
     Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
@@ -3725,17 +3725,17 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: W:/ECE241/finalproject/finalproject.v Line: 47
     Warning (15610): No output dependent on input pin "SW[8]" File: W:/ECE241/finalproject/finalproject.v Line: 47
     Warning (15610): No output dependent on input pin "SW[9]" File: W:/ECE241/finalproject/finalproject.v Line: 47
-Info (21057): Implemented 1791 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 1789 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 32 output pins
     Info (21060): Implemented 6 bidirectional pins
-    Info (21061): Implemented 1556 logic cells
+    Info (21061): Implemented 1554 logic cells
     Info (21064): Implemented 179 RAM segments
     Info (21065): Implemented 2 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 454 warnings
-    Info: Peak virtual memory: 788 megabytes
-    Info: Processing ended: Fri Nov 29 04:47:23 2019
-    Info: Elapsed time: 00:01:28
-    Info: Total CPU time (on all processors): 00:00:47
+    Info: Peak virtual memory: 786 megabytes
+    Info: Processing ended: Fri Nov 29 07:07:35 2019
+    Info: Elapsed time: 00:01:32
+    Info: Total CPU time (on all processors): 00:00:49
 
 

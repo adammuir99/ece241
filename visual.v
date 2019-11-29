@@ -262,28 +262,12 @@ module datapath (resetn, clock, pressed_key, draw, pause, erase, idle, done_draw
 			fullcounter <= 17'd0;
 			xcounter <= 9'd0;
 			ycounter <= 8'd0;
-			//fullcounter <= 320 * 70 + xinitial;
 			fullcounter <= 17'b0;
 			if (enable)
 				done_pause <= 1'b1;
 		end
 		else if (erase) begin
-		/*
-			xpos <= xcounter;
-			ypos <= ycounter;
-			colour_out <= colour[14:12];
-			xcounter <= xcounter + 1'b1;
-			fullcounter <= fullcounter + 1'b1;
-			if (xcounter == 9'd320) begin
-				xcounter <= 9'd0;
-				ycounter <= ycounter + 1;
-			end
-			if (ycounter == 8'd240) begin
-				xcounter <= 9'd0;
-				ycounter <= 8'd0;
-				fullcounter <= 17'd0;
-				done_erase <= 1'b1;
-			end*/
+		
 			case (key_type)
 				leftwhite: begin
 								xpos <= xinitial + xcounter;
@@ -331,7 +315,7 @@ module datapath (resetn, clock, pressed_key, draw, pause, erase, idle, done_draw
 									xcounter <= 9'd0;
 									ycounter <= ycounter + 1'b1;
 								end
-								else if (ycounter == 79 && xcounter == 11) begin
+								else if (ycounter == 80 && xcounter == 11) begin
 									fullcounter <= 17'd0;
 									done_erase <= 1'b1;
 									xcounter <= 9'b0;
@@ -365,70 +349,7 @@ module datapath (resetn, clock, pressed_key, draw, pause, erase, idle, done_draw
 								xcounter <= xcounter + 1'b1;
 								end
 							end
-			endcase/*
-			if (key_type == black_key) begin
-				xpos <= xinitial + xcounter;
-				ypos <= yinitial + ycounter;
-				colour_out <= colour[14:12];
-				//colour_out <= 3'b000;
-				fullcounter <= fullcounter + 1'b1;
-				//xcounter <= xcounter + 1'b1;
-				if ((fullcounter - xinitial) % 320 == 6) begin
-					fullcounter <= fullcounter + 314;	//320 width of the screen - 7
-				end
-				if (xcounter == 9'd6)	begin				//sprite is 7x47
-					xcounter <= 9'd0;
-					ycounter <= ycounter + 1'b1;
-				end
-				else if (ycounter == 46 && xcounter == 5) begin
-					fullcounter <= 17'd0;
-					done_erase <= 1'b1;
-					xcounter <= 9'b0;
-					ycounter <= 8'b0;
-				end
-				else begin
-				xcounter <= xcounter + 1'b1;
-				end*/
-				/*
-				colour_out <= 3'b000;
-				xpos <= xinitial + xcounter;
-				ypos <= yinitial + ycounter;
-				xcounter <= xcounter + 1'b1;
-				if (xcounter == 6) begin
-					xcounter <= 9'd0;
-					ycounter <= ycounter + 1'b1;
-				end
-				if (ycounter <	47) begin
-					done_erase <= 1'b1;
-					xcounter <= 9'b0;
-					ycounter <= 8'b0;
-				end*/			
-/*			
-			else begin
-				xpos <= xinitial + xcounter;
-				ypos <= yinitial + ycounter;
-				colour_out <= colour[14:12];
-				fullcounter <= fullcounter + 1'b1;
-			//	xcounter <= xcounter + 1'b1;
-
-				if ((fullcounter - xinitial) % 320 == 13) begin
-					fullcounter <= fullcounter + 307;	//320 width of the screen - 7
-				if (xcounter == 9'd12)	begin				//sprite is 13x80
-					xcounter <= 9'd0;
-					ycounter <= ycounter + 1'b1;
-				end
-				else if (ycounter == 80) begin
-				//if (fullcounter == (320 * 70 + xinitial + 1039)) begin
-					fullcounter <= 17'd0;
-					done_erase <= 1'b1;
-					xcounter <= 9'b0;
-					ycounter <= 8'b0;
-				end
-				else begin
-				xcounter <= xcounter + 1'b1;
-				end
-			end
-		end*/
+			endcase
 		end
 		else begin						//when no key is pressed reset the counters so there is no carry-over from the last drawing
 			xcounter <= 9'b0;

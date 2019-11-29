@@ -696,12 +696,12 @@ set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 
 set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
 set_global_assignment -name SEARCH_PATH "w:\\ece241\\finalproject\\ps2 controller"
 set_global_assignment -name SEARCH_PATH "w:\\ece241\\finalproject\\vga controller"
+set_global_assignment -name VERILOG_FILE sprites/background_mem.v
 set_global_assignment -name VERILOG_FILE rightwhite_erase.v
 set_global_assignment -name VERILOG_FILE middlewhite_erase.v
 set_global_assignment -name VERILOG_FILE leftwhite_erase.v
 set_global_assignment -name VERILOG_FILE sprites/rightwhite.v
 set_global_assignment -name VERILOG_FILE sprites/middlewhite.v
-set_global_assignment -name VERILOG_FILE sprites/background_mem.v
 set_global_assignment -name VERILOG_FILE sprites/black_key.v
 set_global_assignment -name VERILOG_FILE sprites/leftwhite.v
 set_global_assignment -name VERILOG_FILE finalproject.v
