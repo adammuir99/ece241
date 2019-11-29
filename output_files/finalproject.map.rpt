@@ -1,5 +1,5 @@
 Analysis & Synthesis report for finalproject
-Fri Nov 29 07:07:35 2019
+Fri Nov 29 12:29:44 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -115,13 +115,13 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Analysis & Synthesis Summary                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Analysis & Synthesis Status     ; Successful - Fri Nov 29 07:07:34 2019           ;
+; Analysis & Synthesis Status     ; Successful - Fri Nov 29 12:29:43 2019           ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
 ; Revision Name                   ; finalproject                                    ;
 ; Top-level Entity Name           ; finalproject                                    ;
 ; Family                          ; Cyclone V                                       ;
 ; Logic utilization (in ALMs)     ; N/A                                             ;
-; Total registers                 ; 539                                             ;
+; Total registers                 ; 773                                             ;
 ; Total pins                      ; 54                                              ;
 ; Total virtual pins              ; 0                                               ;
 ; Total block memory bits         ; 266,491                                         ;
@@ -275,6 +275,7 @@ refer to the applicable agreement for further details.
 ; Audio_Controller/Altera_UP_Clock_Edge.v            ; yes             ; User Verilog HDL File                  ; W:/ECE241/finalproject/Audio_Controller/Altera_UP_Clock_Edge.v            ;         ;
 ; Audio_Controller/Altera_UP_Audio_Out_Serializer.v  ; yes             ; User Verilog HDL File                  ; W:/ECE241/finalproject/Audio_Controller/Altera_UP_Audio_Out_Serializer.v  ;         ;
 ; Audio_Controller/Altera_UP_Audio_In_Deserializer.v ; yes             ; User Verilog HDL File                  ; W:/ECE241/finalproject/Audio_Controller/Altera_UP_Audio_In_Deserializer.v ;         ;
+; maryhadalittlelamb.v                               ; yes             ; User Verilog HDL File                  ; W:/ECE241/finalproject/maryhadalittlelamb.v                               ;         ;
 ; altsyncram.tdf                                     ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/altsyncram.tdf          ;         ;
 ; stratix_ram_block.inc                              ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/stratix_ram_block.inc   ;         ;
 ; lpm_mux.inc                                        ; yes             ; Megafunction                           ; c:/desl/quartus18/quartus/libraries/megafunctions/lpm_mux.inc             ;         ;
@@ -337,16 +338,16 @@ refer to the applicable agreement for further details.
 +---------------------------------------------+----------------+
 ; Resource                                    ; Usage          ;
 +---------------------------------------------+----------------+
-; Estimate of Logic utilization (ALMs needed) ; 819            ;
+; Estimate of Logic utilization (ALMs needed) ; 879            ;
 ;                                             ;                ;
-; Combinational ALUT usage for logic          ; 1448           ;
-;     -- 7 input functions                    ; 9              ;
-;     -- 6 input functions                    ; 170            ;
-;     -- 5 input functions                    ; 234            ;
+; Combinational ALUT usage for logic          ; 1567           ;
+;     -- 7 input functions                    ; 12             ;
+;     -- 6 input functions                    ; 155            ;
+;     -- 5 input functions                    ; 225            ;
 ;     -- 4 input functions                    ; 222            ;
-;     -- <=3 input functions                  ; 813            ;
+;     -- <=3 input functions                  ; 953            ;
 ;                                             ;                ;
-; Dedicated logic registers                   ; 539            ;
+; Dedicated logic registers                   ; 773            ;
 ;                                             ;                ;
 ; I/O pins                                    ; 54             ;
 ; Total MLAB memory bits                      ; 0              ;
@@ -358,9 +359,9 @@ refer to the applicable agreement for further details.
 ;     -- PLLs                                 ; 2              ;
 ;                                             ;                ;
 ; Maximum fan-out node                        ; CLOCK_50~input ;
-; Maximum fan-out                             ; 628            ;
-; Total fan-out                               ; 10438          ;
-; Average fan-out                             ; 4.57           ;
+; Maximum fan-out                             ; 862            ;
+; Total fan-out                               ; 11431          ;
+; Average fan-out                             ; 4.34           ;
 +---------------------------------------------+----------------+
 
 
@@ -369,8 +370,8 @@ refer to the applicable agreement for further details.
 +---------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+--------------+
 ; Compilation Hierarchy Node                                    ; Combinational ALUTs ; Dedicated Logic Registers ; Block Memory Bits ; DSP Blocks ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                                                                                                                            ; Entity Name                     ; Library Name ;
 +---------------------------------------------------------------+---------------------+---------------------------+-------------------+------------+------+--------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+---------------------------------+--------------+
-; |finalproject                                                 ; 1448 (51)           ; 539 (0)                   ; 266491            ; 0          ; 54   ; 0            ; |finalproject                                                                                                                                                                                                                                  ; finalproject                    ; work         ;
-;    |Audio_Controller:Audio_Controller|                        ; 268 (4)             ; 222 (4)                   ; 16384             ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller                                                                                                                                                                                                ; Audio_Controller                ; work         ;
+; |finalproject                                                 ; 1567 (63)           ; 773 (0)                   ; 266491            ; 0          ; 54   ; 0            ; |finalproject                                                                                                                                                                                                                                  ; finalproject                    ; work         ;
+;    |Audio_Controller:Audio_Controller|                        ; 267 (4)             ; 222 (4)                   ; 16384             ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller                                                                                                                                                                                                ; Audio_Controller                ; work         ;
 ;       |Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer| ; 111 (5)             ; 108 (36)                  ; 8192              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer                                                                                                                                          ; Altera_UP_Audio_In_Deserializer ; work         ;
 ;          |Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter|  ; 10 (10)             ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter                                                                                        ; Altera_UP_Audio_Bit_Counter     ; work         ;
 ;          |Altera_UP_SYNC_FIFO:Audio_In_Left_Channel_FIFO|     ; 48 (0)              ; 33 (0)                    ; 4096              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Left_Channel_FIFO                                                                                           ; Altera_UP_SYNC_FIFO             ; work         ;
@@ -389,7 +390,7 @@ refer to the applicable agreement for further details.
 ;                      |cntr_h2b:rd_ptr_msb|                    ; 7 (7)               ; 6 (6)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated|a_dpfifo_q2a1:dpfifo|cntr_h2b:rd_ptr_msb     ; cntr_h2b                        ; work         ;
 ;                      |cntr_i2b:wr_ptr|                        ; 8 (8)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated|a_dpfifo_q2a1:dpfifo|cntr_i2b:wr_ptr         ; cntr_i2b                        ; work         ;
 ;                      |cntr_u27:usedw_counter|                 ; 8 (8)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_SYNC_FIFO:Audio_In_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated|a_dpfifo_q2a1:dpfifo|cntr_u27:usedw_counter  ; cntr_u27                        ; work         ;
-;       |Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|   ; 150 (56)            ; 104 (38)                  ; 8192              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer                                                                                                                                            ; Altera_UP_Audio_Out_Serializer  ; work         ;
+;       |Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|   ; 151 (57)            ; 104 (38)                  ; 8192              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer                                                                                                                                            ; Altera_UP_Audio_Out_Serializer  ; work         ;
 ;          |Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|    ; 47 (0)              ; 33 (0)                    ; 4096              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO                                                                                            ; Altera_UP_SYNC_FIFO             ; work         ;
 ;             |scfifo:Sync_FIFO|                                ; 47 (0)              ; 33 (0)                    ; 4096              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO                                                                           ; scfifo                          ; work         ;
 ;                |scfifo_7ba1:auto_generated|                   ; 47 (0)              ; 33 (0)                    ; 4096              ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Left_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated                                                ; scfifo_7ba1                     ; work         ;
@@ -407,8 +408,8 @@ refer to the applicable agreement for further details.
 ;                      |cntr_i2b:wr_ptr|                        ; 8 (8)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated|a_dpfifo_q2a1:dpfifo|cntr_i2b:wr_ptr          ; cntr_i2b                        ; work         ;
 ;                      |cntr_u27:usedw_counter|                 ; 8 (8)               ; 7 (7)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|Altera_UP_SYNC_FIFO:Audio_Out_Right_Channel_FIFO|scfifo:Sync_FIFO|scfifo_7ba1:auto_generated|a_dpfifo_q2a1:dpfifo|cntr_u27:usedw_counter   ; cntr_u27                        ; work         ;
 ;       |Altera_UP_Clock_Edge:ADC_Left_Right_Clock_Edges|       ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:ADC_Left_Right_Clock_Edges                                                                                                                                                ; Altera_UP_Clock_Edge            ; work         ;
-;       |Altera_UP_Clock_Edge:Bit_Clock_Edges|                  ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:Bit_Clock_Edges                                                                                                                                                           ; Altera_UP_Clock_Edge            ; work         ;
-;       |Altera_UP_Clock_Edge:DAC_Left_Right_Clock_Edges|       ; 1 (1)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:DAC_Left_Right_Clock_Edges                                                                                                                                                ; Altera_UP_Clock_Edge            ; work         ;
+;       |Altera_UP_Clock_Edge:Bit_Clock_Edges|                  ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:Bit_Clock_Edges                                                                                                                                                           ; Altera_UP_Clock_Edge            ; work         ;
+;       |Altera_UP_Clock_Edge:DAC_Left_Right_Clock_Edges|       ; 0 (0)               ; 2 (2)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:DAC_Left_Right_Clock_Edges                                                                                                                                                ; Altera_UP_Clock_Edge            ; work         ;
 ;       |Audio_Clock:Audio_Clock|                               ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Audio_Clock:Audio_Clock                                                                                                                                                                        ; Audio_Clock                     ; work         ;
 ;          |altpll:altpll_component|                            ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Audio_Clock:Audio_Clock|altpll:altpll_component                                                                                                                                                ; altpll                          ; work         ;
 ;             |Audio_Clock_altpll:auto_generated|               ; 0 (0)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|Audio_Controller:Audio_Controller|Audio_Clock:Audio_Clock|altpll:altpll_component|Audio_Clock_altpll:auto_generated                                                                                                              ; Audio_Clock_altpll              ; work         ;
@@ -420,11 +421,13 @@ refer to the applicable agreement for further details.
 ;       |datapath_ps2:d|                                        ; 0 (0)               ; 8 (8)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|PS2_Keyboard:comb_7|datapath_ps2:d                                                                                                                                                                                               ; datapath_ps2                    ; work         ;
 ;    |avconf:avc|                                               ; 96 (53)             ; 75 (45)                   ; 0                 ; 0          ; 0    ; 0            ; |finalproject|avconf:avc                                                                                                                                                                                                                       ; avconf                          ; work         ;
 ;       |I2C_Controller:u0|                                     ; 43 (43)             ; 30 (30)                   ; 0                 ; 0          ; 0    ; 0            ; |finalproject|avconf:avc|I2C_Controller:u0                                                                                                                                                                                                     ; I2C_Controller                  ; work         ;
-;    |notes:notes|                                              ; 207 (207)           ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |finalproject|notes:notes                                                                                                                                                                                                                      ; notes                           ; work         ;
-;    |valid_key_LUT:comb_9|                                     ; 11 (11)             ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|valid_key_LUT:comb_9                                                                                                                                                                                                             ; valid_key_LUT                   ; work         ;
-;    |visual:visual|                                            ; 706 (0)             ; 122 (0)                   ; 250107            ; 0          ; 0    ; 0            ; |finalproject|visual:visual                                                                                                                                                                                                                    ; visual                          ; work         ;
-;       |control:c1|                                            ; 8 (8)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|visual:visual|control:c1                                                                                                                                                                                                         ; control                         ; work         ;
-;       |datapath:d1|                                           ; 610 (157)           ; 84 (64)                   ; 19707             ; 0          ; 0    ; 0            ; |finalproject|visual:visual|datapath:d1                                                                                                                                                                                                        ; datapath                        ; work         ;
+;    |maryhadalittlelamb:mhall|                                 ; 123 (90)            ; 234 (207)                 ; 0                 ; 0          ; 0    ; 0            ; |finalproject|maryhadalittlelamb:mhall                                                                                                                                                                                                         ; maryhadalittlelamb              ; work         ;
+;       |rateDivider:comb_3|                                    ; 33 (33)             ; 27 (27)                   ; 0                 ; 0          ; 0    ; 0            ; |finalproject|maryhadalittlelamb:mhall|rateDivider:comb_3                                                                                                                                                                                      ; rateDivider                     ; work         ;
+;    |notes:notes|                                              ; 197 (197)           ; 19 (19)                   ; 0                 ; 0          ; 0    ; 0            ; |finalproject|notes:notes                                                                                                                                                                                                                      ; notes                           ; work         ;
+;    |valid_key_LUT:comb_25|                                    ; 7 (7)               ; 0 (0)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|valid_key_LUT:comb_25                                                                                                                                                                                                            ; valid_key_LUT                   ; work         ;
+;    |visual:visual|                                            ; 705 (0)             ; 122 (0)                   ; 250107            ; 0          ; 0    ; 0            ; |finalproject|visual:visual                                                                                                                                                                                                                    ; visual                          ; work         ;
+;       |control:c1|                                            ; 9 (9)               ; 4 (4)                     ; 0                 ; 0          ; 0    ; 0            ; |finalproject|visual:visual|control:c1                                                                                                                                                                                                         ; control                         ; work         ;
+;       |datapath:d1|                                           ; 608 (155)           ; 84 (64)                   ; 19707             ; 0          ; 0    ; 0            ; |finalproject|visual:visual|datapath:d1                                                                                                                                                                                                        ; datapath                        ; work         ;
 ;          |black_key:bk|                                       ; 0 (0)               ; 0 (0)                     ; 987               ; 0          ; 0    ; 0            ; |finalproject|visual:visual|datapath:d1|black_key:bk                                                                                                                                                                                           ; black_key                       ; work         ;
 ;             |altsyncram:altsyncram_component|                 ; 0 (0)               ; 0 (0)                     ; 987               ; 0          ; 0    ; 0            ; |finalproject|visual:visual|datapath:d1|black_key:bk|altsyncram:altsyncram_component                                                                                                                                                           ; altsyncram                      ; work         ;
 ;                |altsyncram_7eg1:auto_generated|               ; 0 (0)               ; 0 (0)                     ; 987               ; 0          ; 0    ; 0            ; |finalproject|visual:visual|datapath:d1|black_key:bk|altsyncram:altsyncram_component|altsyncram_7eg1:auto_generated                                                                                                                            ; altsyncram_7eg1                 ; work         ;
@@ -583,42 +586,73 @@ Encoding Type:  One-Hot
 Note: All latches listed above may not be present at the end of synthesis due to various synthesis optimizations.
 
 
-+-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; Registers Removed During Synthesis                                                                                                                                                                                                              ;
-+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-; Register name                                                                                                                     ; Reason for Removal                                                                                          ;
-+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|idle_counter[0..7]                                                                         ; Lost fanout                                                                                                 ;
-; avconf:avc|mI2C_DATA[16,17,19,23]                                                                                                 ; Stuck at GND due to stuck port data_in                                                                      ;
-; avconf:avc|I2C_Controller:u0|SD[16,17,19,23]                                                                                      ; Stuck at GND due to stuck port data_in                                                                      ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|ps2_command[1..7]                                ; Merged with PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|ps2_command[0] ;
-; avconf:avc|I2C_Controller:u0|SD[20,21]                                                                                            ; Merged with avconf:avc|I2C_Controller:u0|SD[18]                                                             ;
-; avconf:avc|mI2C_DATA[20,21]                                                                                                       ; Merged with avconf:avc|mI2C_DATA[18]                                                                        ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|ps2_command[0]                                   ; Stuck at GND due to stuck port data_in                                                                      ;
-; visual:visual|datapath:d1|last_pressed[7]                                                                                         ; Stuck at GND due to stuck port data_in                                                                      ;
-; avconf:avc|mSetup_ST~9                                                                                                            ; Lost fanout                                                                                                 ;
-; avconf:avc|mSetup_ST~10                                                                                                           ; Lost fanout                                                                                                 ;
-; visual:visual|control:c1|current_state~2                                                                                          ; Lost fanout                                                                                                 ;
-; visual:visual|control:c1|current_state~3                                                                                          ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver~2                                                                        ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver~3                                                                        ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~2                              ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~3                              ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~4                              ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~2                                         ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~3                                         ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|control_ps2:c|current_state~4                                                                                 ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT                                                  ; Stuck at GND due to stuck port data_in                                                                      ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_4_END_DELAYED                                                  ; Stuck at GND due to stuck port data_in                                                                      ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|error_communication_timed_out                    ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|command_was_sent                                 ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_3_END_TRANSFER                                                 ; Stuck at GND due to stuck port data_in                                                                      ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA                 ; Stuck at GND due to stuck port data_in                                                                      ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_0_IDLE               ; Stuck at GND due to stuck port data_in                                                                      ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_6_COMMAND_WAS_SENT   ; Lost fanout                                                                                                 ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_7_TRANSMISSION_ERROR ; Lost fanout                                                                                                 ;
-; Total Number of Removed Registers = 50                                                                                            ;                                                                                                             ;
-+-----------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                                                                                                      ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                                                                                             ; Reason for Removal                                                                                          ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|idle_counter[0..7]                                                                                                                                 ; Lost fanout                                                                                                 ;
+; avconf:avc|mI2C_DATA[16,17,19,23]                                                                                                                                                         ; Stuck at GND due to stuck port data_in                                                                      ;
+; avconf:avc|I2C_Controller:u0|SD[16,17,19,23]                                                                                                                                              ; Stuck at GND due to stuck port data_in                                                                      ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|ps2_command[1..7]                                                                                        ; Merged with PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|ps2_command[0] ;
+; avconf:avc|I2C_Controller:u0|SD[20,21]                                                                                                                                                    ; Merged with avconf:avc|I2C_Controller:u0|SD[18]                                                             ;
+; avconf:avc|mI2C_DATA[20,21]                                                                                                                                                               ; Merged with avconf:avc|mI2C_DATA[18]                                                                        ;
+; maryhadalittlelamb:mhall|shiftreg[40]                                                                                                                                                     ; Merged with maryhadalittlelamb:mhall|shiftreg[39]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[32,33]                                                                                                                                                  ; Merged with maryhadalittlelamb:mhall|shiftreg[31]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[29]                                                                                                                                                     ; Merged with maryhadalittlelamb:mhall|shiftreg[28]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[22,27]                                                                                                                                                  ; Merged with maryhadalittlelamb:mhall|shiftreg[21]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[24..26]                                                                                                                                                 ; Merged with maryhadalittlelamb:mhall|shiftreg[23]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[15,20]                                                                                                                                                  ; Merged with maryhadalittlelamb:mhall|shiftreg[14]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[17..19]                                                                                                                                                 ; Merged with maryhadalittlelamb:mhall|shiftreg[16]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[7,8]                                                                                                                                                    ; Merged with maryhadalittlelamb:mhall|shiftreg[13]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[9,11,12]                                                                                                                                                ; Merged with maryhadalittlelamb:mhall|shiftreg[10]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[1,6]                                                                                                                                                    ; Merged with maryhadalittlelamb:mhall|shiftreg[0]                                                            ;
+; maryhadalittlelamb:mhall|shiftreg[3..5]                                                                                                                                                   ; Merged with maryhadalittlelamb:mhall|shiftreg[2]                                                            ;
+; maryhadalittlelamb:mhall|shiftreg[47]                                                                                                                                                     ; Merged with maryhadalittlelamb:mhall|shiftreg[46]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[54]                                                                                                                                                     ; Merged with maryhadalittlelamb:mhall|shiftreg[53]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[61]                                                                                                                                                     ; Merged with maryhadalittlelamb:mhall|shiftreg[60]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[68]                                                                                                                                                     ; Merged with maryhadalittlelamb:mhall|shiftreg[67]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[75]                                                                                                                                                     ; Merged with maryhadalittlelamb:mhall|shiftreg[74]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[82]                                                                                                                                                     ; Merged with maryhadalittlelamb:mhall|shiftreg[81]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[89]                                                                                                                                                     ; Merged with maryhadalittlelamb:mhall|shiftreg[88]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[96]                                                                                                                                                     ; Merged with maryhadalittlelamb:mhall|shiftreg[95]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[103]                                                                                                                                                    ; Merged with maryhadalittlelamb:mhall|shiftreg[102]                                                          ;
+; maryhadalittlelamb:mhall|shiftreg[110]                                                                                                                                                    ; Merged with maryhadalittlelamb:mhall|shiftreg[109]                                                          ;
+; maryhadalittlelamb:mhall|shiftreg[117]                                                                                                                                                    ; Merged with maryhadalittlelamb:mhall|shiftreg[116]                                                          ;
+; maryhadalittlelamb:mhall|shiftreg[124]                                                                                                                                                    ; Merged with maryhadalittlelamb:mhall|shiftreg[123]                                                          ;
+; maryhadalittlelamb:mhall|shiftreg[131]                                                                                                                                                    ; Merged with maryhadalittlelamb:mhall|shiftreg[130]                                                          ;
+; maryhadalittlelamb:mhall|shiftreg[138]                                                                                                                                                    ; Merged with maryhadalittlelamb:mhall|shiftreg[137]                                                          ;
+; maryhadalittlelamb:mhall|shiftreg[145]                                                                                                                                                    ; Merged with maryhadalittlelamb:mhall|shiftreg[144]                                                          ;
+; maryhadalittlelamb:mhall|shiftreg[2]                                                                                                                                                      ; Stuck at GND due to stuck port data_in                                                                      ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|ps2_command[0]                                                                                           ; Stuck at GND due to stuck port data_in                                                                      ;
+; maryhadalittlelamb:mhall|shiftreg[10,16,23,31,39,46,53,60,67,74,81,88,95,102,109,116,123,130,137,144,152,159,166,173,180,187,194,201,208,215,222,229,236,243,250,257,264,271,278,285,292] ; Stuck at GND due to stuck port data_in                                                                      ;
+; visual:visual|datapath:d1|last_pressed[7]                                                                                                                                                 ; Stuck at GND due to stuck port data_in                                                                      ;
+; avconf:avc|mSetup_ST~9                                                                                                                                                                    ; Lost fanout                                                                                                 ;
+; avconf:avc|mSetup_ST~10                                                                                                                                                                   ; Lost fanout                                                                                                 ;
+; visual:visual|control:c1|current_state~2                                                                                                                                                  ; Lost fanout                                                                                                 ;
+; visual:visual|control:c1|current_state~3                                                                                                                                                  ; Lost fanout                                                                                                 ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver~2                                                                                                                                ; Lost fanout                                                                                                 ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver~3                                                                                                                                ; Lost fanout                                                                                                 ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~2                                                                                      ; Lost fanout                                                                                                 ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~3                                                                                      ; Lost fanout                                                                                                 ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter~4                                                                                      ; Lost fanout                                                                                                 ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~2                                                                                                 ; Lost fanout                                                                                                 ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver~3                                                                                                 ; Lost fanout                                                                                                 ;
+; PS2_Keyboard:comb_7|control_ps2:c|current_state~4                                                                                                                                         ; Lost fanout                                                                                                 ;
+; maryhadalittlelamb:mhall|shiftreg[37,158]                                                                                                                                                 ; Merged with maryhadalittlelamb:mhall|shiftreg[13]                                                           ;
+; maryhadalittlelamb:mhall|shiftreg[30,38,151]                                                                                                                                              ; Merged with maryhadalittlelamb:mhall|shiftreg[0]                                                            ;
+; maryhadalittlelamb:mhall|shiftreg[44]                                                                                                                                                     ; Merged with maryhadalittlelamb:mhall|shiftreg[14]                                                           ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT                                                                                                          ; Stuck at GND due to stuck port data_in                                                                      ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_4_END_DELAYED                                                                                                          ; Stuck at GND due to stuck port data_in                                                                      ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|command_was_sent                                                                                         ; Lost fanout                                                                                                 ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|error_communication_timed_out                                                                            ; Lost fanout                                                                                                 ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_3_END_TRANSFER                                                                                                         ; Stuck at GND due to stuck port data_in                                                                      ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA                                                                         ; Stuck at GND due to stuck port data_in                                                                      ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_0_IDLE                                                                       ; Stuck at GND due to stuck port data_in                                                                      ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_6_COMMAND_WAS_SENT                                                           ; Lost fanout                                                                                                 ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_7_TRANSMISSION_ERROR                                                         ; Lost fanout                                                                                                 ;
+; Total Number of Removed Registers = 137                                                                                                                                                   ;                                                                                                             ;
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------+
 
 
 +--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
@@ -626,12 +660,33 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
 ; Register name                                                                    ; Reason for Removal        ; Registers Removed due to This Register                                                                                            ;
 +----------------------------------------------------------------------------------+---------------------------+-----------------------------------------------------------------------------------------------------------------------------------+
+; maryhadalittlelamb:mhall|shiftreg[2]                                             ; Stuck at GND              ; maryhadalittlelamb:mhall|shiftreg[10], maryhadalittlelamb:mhall|shiftreg[16],                                                     ;
+;                                                                                  ; due to stuck port data_in ; maryhadalittlelamb:mhall|shiftreg[23], maryhadalittlelamb:mhall|shiftreg[31],                                                     ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[39], maryhadalittlelamb:mhall|shiftreg[46],                                                     ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[53], maryhadalittlelamb:mhall|shiftreg[60],                                                     ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[67], maryhadalittlelamb:mhall|shiftreg[74],                                                     ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[81], maryhadalittlelamb:mhall|shiftreg[88],                                                     ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[95], maryhadalittlelamb:mhall|shiftreg[102],                                                    ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[109], maryhadalittlelamb:mhall|shiftreg[116],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[123], maryhadalittlelamb:mhall|shiftreg[130],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[137], maryhadalittlelamb:mhall|shiftreg[144],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[152], maryhadalittlelamb:mhall|shiftreg[159],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[166], maryhadalittlelamb:mhall|shiftreg[173],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[180], maryhadalittlelamb:mhall|shiftreg[187],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[194], maryhadalittlelamb:mhall|shiftreg[201],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[208], maryhadalittlelamb:mhall|shiftreg[215],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[222], maryhadalittlelamb:mhall|shiftreg[229],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[236], maryhadalittlelamb:mhall|shiftreg[243],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[250], maryhadalittlelamb:mhall|shiftreg[257],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[264], maryhadalittlelamb:mhall|shiftreg[271],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[278], maryhadalittlelamb:mhall|shiftreg[285],                                                   ;
+;                                                                                  ;                           ; maryhadalittlelamb:mhall|shiftreg[292], visual:visual|datapath:d1|last_pressed[7]                                                 ;
 ; PS2_Keyboard:comb_7|PS2_Controller:PS2|idle_counter[3]                           ; Lost Fanouts              ; PS2_Keyboard:comb_7|PS2_Controller:PS2|idle_counter[4],                                                                           ;
 ;                                                                                  ;                           ; PS2_Keyboard:comb_7|PS2_Controller:PS2|idle_counter[5],                                                                           ;
 ;                                                                                  ;                           ; PS2_Keyboard:comb_7|PS2_Controller:PS2|idle_counter[6],                                                                           ;
 ;                                                                                  ;                           ; PS2_Keyboard:comb_7|PS2_Controller:PS2|idle_counter[7]                                                                            ;
-; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver~2                       ; Lost Fanouts              ; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|error_communication_timed_out,                   ;
-;                                                                                  ;                           ; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|command_was_sent,                                ;
+; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver~2                       ; Lost Fanouts              ; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|command_was_sent,                                ;
+;                                                                                  ;                           ; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|error_communication_timed_out,                   ;
 ;                                                                                  ;                           ; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_6_COMMAND_WAS_SENT,  ;
 ;                                                                                  ;                           ; PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|s_ps2_transmitter.PS2_STATE_7_TRANSMISSION_ERROR ;
 ; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT ; Stuck at GND              ; PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver.PS2_STATE_3_END_TRANSFER,                                                ;
@@ -652,12 +707,12 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +----------------------------------------------+-------+
 ; Statistic                                    ; Value ;
 +----------------------------------------------+-------+
-; Total registers                              ; 539   ;
-; Number of registers using Synchronous Clear  ; 352   ;
+; Total registers                              ; 773   ;
+; Number of registers using Synchronous Clear  ; 485   ;
 ; Number of registers using Synchronous Load   ; 18    ;
 ; Number of registers using Asynchronous Clear ; 59    ;
 ; Number of registers using Asynchronous Load  ; 0     ;
-; Number of registers using Clock Enable       ; 349   ;
+; Number of registers using Clock Enable       ; 556   ;
 ; Number of registers using Preset             ; 0     ;
 +----------------------------------------------+-------+
 
@@ -685,24 +740,29 @@ Note: All latches listed above may not be present at the end of synthesis due to
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 ; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                                                             ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[5]                                                                ;
-; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[2]                                                               ;
-; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |finalproject|visual:visual|vga_adapter:VGA|vga_controller:controller|yCounter[1]                                                                                      ;
-; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|data_in_shift_reg[30]                                            ;
-; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|datapath_ps2:d|pressed_key[0]                                                                                                        ;
-; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter|bit_counter[0] ;
-; 4:1                ; 13 bits   ; 26 LEs        ; 0 LEs                ; 26 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|command_initiate_counter[2]                                             ;
-; 4:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|waiting_counter[20]                                                     ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|received_data[6]                                                                ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_shift_reg[0]                                                               ;
+; 3:1                ; 10 bits   ; 20 LEs        ; 0 LEs                ; 20 LEs                 ; Yes        ; |finalproject|visual:visual|vga_adapter:VGA|vga_controller:controller|yCounter[2]                                                                                      ;
+; 3:1                ; 32 bits   ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|data_in_shift_reg[1]                                             ;
+; 3:1                ; 118 bits  ; 236 LEs       ; 0 LEs                ; 236 LEs                ; Yes        ; |finalproject|maryhadalittlelamb:mhall|shiftreg[94]                                                                                                                    ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |finalproject|maryhadalittlelamb:mhall|shiftreg[30]                                                                                                                    ;
+; 3:1                ; 91 bits   ; 182 LEs       ; 91 LEs               ; 91 LEs                 ; Yes        ; |finalproject|maryhadalittlelamb:mhall|shiftreg[247]                                                                                                                   ;
+; 4:1                ; 8 bits    ; 16 LEs        ; 0 LEs                ; 16 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|datapath_ps2:d|pressed_key[6]                                                                                                        ;
+; 4:1                ; 5 bits    ; 10 LEs        ; 10 LEs               ; 0 LEs                  ; Yes        ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter|bit_counter[3] ;
+; 4:1                ; 13 bits   ; 26 LEs        ; 0 LEs                ; 26 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|command_initiate_counter[6]                                             ;
+; 4:1                ; 20 bits   ; 40 LEs        ; 0 LEs                ; 40 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|waiting_counter[9]                                                      ;
 ; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|cur_bit[0]                                                              ;
-; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[0]                                                                   ;
-; 4:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|transfer_counter[3]                                                     ;
-; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|data_out_shift_reg[29]                                             ;
-; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |finalproject|visual:visual|datapath:d1|colour_out[0]                                                                                                                  ;
-; 12:1               ; 16 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |finalproject|visual:visual|datapath:d1|fullcounter[9]                                                                                                                 ;
-; 17:1               ; 9 bits    ; 99 LEs        ; 0 LEs                ; 99 LEs                 ; Yes        ; |finalproject|visual:visual|datapath:d1|xcounter[7]                                                                                                                    ;
-; 13:1               ; 8 bits    ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |finalproject|visual:visual|datapath:d1|ycounter[0]                                                                                                                    ;
-; 74:1               ; 18 bits   ; 882 LEs       ; 0 LEs                ; 882 LEs                ; Yes        ; |finalproject|notes:notes|Q[1]                                                                                                                                         ;
+; 4:1                ; 4 bits    ; 8 LEs         ; 8 LEs                ; 0 LEs                  ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In|data_count[2]                                                                   ;
+; 4:1                ; 17 bits   ; 34 LEs        ; 0 LEs                ; 34 LEs                 ; Yes        ; |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out|transfer_counter[4]                                                     ;
+; 6:1                ; 31 bits   ; 124 LEs       ; 62 LEs               ; 62 LEs                 ; Yes        ; |finalproject|Audio_Controller:Audio_Controller|Altera_UP_Audio_Out_Serializer:Audio_Out_Serializer|data_out_shift_reg[3]                                              ;
+; 9:1                ; 3 bits    ; 18 LEs        ; 15 LEs               ; 3 LEs                  ; Yes        ; |finalproject|visual:visual|datapath:d1|colour_out[2]                                                                                                                  ;
+; 12:1               ; 16 bits   ; 128 LEs       ; 0 LEs                ; 128 LEs                ; Yes        ; |finalproject|visual:visual|datapath:d1|fullcounter[13]                                                                                                                ;
+; 17:1               ; 9 bits    ; 99 LEs        ; 0 LEs                ; 99 LEs                 ; Yes        ; |finalproject|visual:visual|datapath:d1|xcounter[8]                                                                                                                    ;
+; 13:1               ; 8 bits    ; 64 LEs        ; 0 LEs                ; 64 LEs                 ; Yes        ; |finalproject|visual:visual|datapath:d1|ycounter[7]                                                                                                                    ;
+; 74:1               ; 18 bits   ; 882 LEs       ; 0 LEs                ; 882 LEs                ; Yes        ; |finalproject|notes:notes|Q[13]                                                                                                                                        ;
 ; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |finalproject|avconf:avc|I2C_Controller:u0|SD_COUNTER[0]                                                                                                               ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; No         ; |finalproject|comb                                                                                                                                                     ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 12 LEs               ; 0 LEs                  ; No         ; |finalproject|comb                                                                                                                                                     ;
 ; 9:1                ; 3 bits    ; 18 LEs        ; 18 LEs               ; 0 LEs                  ; No         ; |finalproject|visual:visual|vga_adapter:VGA|altsyncram:VideoMemory|altsyncram_0im1:auto_generated|mux_2hb:mux3|l4_w1_n0_mux_dataout                                    ;
 +--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
 
@@ -2779,36 +2839,36 @@ Note: In order to hide this table in the UI and the text report file, please set
 +-----------------------+-----------------------------+
 ; Type                  ; Count                       ;
 +-----------------------+-----------------------------+
-; arriav_ff             ; 539                         ;
+; arriav_ff             ; 773                         ;
 ;     CLR               ; 19                          ;
 ;     CLR SCLR          ; 26                          ;
-;     ENA               ; 75                          ;
+;     ENA               ; 164                         ;
 ;     ENA CLR           ; 4                           ;
 ;     ENA CLR SCLR      ; 10                          ;
-;     ENA SCLR          ; 244                         ;
+;     ENA SCLR          ; 362                         ;
 ;     ENA SCLR SLD      ; 16                          ;
-;     SCLR              ; 54                          ;
+;     SCLR              ; 69                          ;
 ;     SCLR SLD          ; 2                           ;
-;     plain             ; 89                          ;
+;     plain             ; 101                         ;
 ; arriav_io_obuf        ; 6                           ;
-; arriav_lcell_comb     ; 1449                        ;
-;     arith             ; 556                         ;
+; arriav_lcell_comb     ; 1568                        ;
+;     arith             ; 583                         ;
 ;         0 data inputs ; 34                          ;
-;         1 data inputs ; 286                         ;
+;         1 data inputs ; 313                         ;
 ;         2 data inputs ; 90                          ;
 ;         3 data inputs ; 82                          ;
 ;         4 data inputs ; 60                          ;
 ;         5 data inputs ; 4                           ;
-;     extend            ; 9                           ;
-;         7 data inputs ; 9                           ;
-;     normal            ; 852                         ;
+;     extend            ; 12                          ;
+;         7 data inputs ; 12                          ;
+;     normal            ; 941                         ;
 ;         0 data inputs ; 2                           ;
-;         1 data inputs ; 4                           ;
-;         2 data inputs ; 172                         ;
-;         3 data inputs ; 112                         ;
+;         1 data inputs ; 6                           ;
+;         2 data inputs ; 261                         ;
+;         3 data inputs ; 134                         ;
 ;         4 data inputs ; 162                         ;
-;         5 data inputs ; 230                         ;
-;         6 data inputs ; 170                         ;
+;         5 data inputs ; 221                         ;
+;         6 data inputs ; 155                         ;
 ;     shared            ; 32                          ;
 ;         0 data inputs ; 4                           ;
 ;         1 data inputs ; 12                          ;
@@ -2819,7 +2879,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 ; stratixv_ram_block    ; 179                         ;
 ;                       ;                             ;
 ; Max LUT depth         ; 40.80                       ;
-; Average LUT depth     ; 11.88                       ;
+; Average LUT depth     ; 10.58                       ;
 +-----------------------+-----------------------------+
 
 
@@ -2838,7 +2898,7 @@ Note: In order to hide this table in the UI and the text report file, please set
 Info: *******************************************************************
 Info: Running Quartus Prime Analysis & Synthesis
     Info: Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
-    Info: Processing started: Fri Nov 29 07:06:03 2019
+    Info: Processing started: Fri Nov 29 12:28:14 2019
 Info: Command: quartus_map --read_settings_files=on --write_settings_files=off finalproject -c finalproject
 Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
 Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
@@ -2910,21 +2970,25 @@ Info (12021): Found 1 design units, including 1 entities, in source file audio_c
     Info (12023): Found entity 1: Altera_UP_Audio_In_Deserializer File: W:/ECE241/finalproject/Audio_Controller/Altera_UP_Audio_In_Deserializer.v Line: 9
 Info (12021): Found 1 design units, including 1 entities, in source file visual_test.v
     Info (12023): Found entity 1: visual_test File: W:/ECE241/finalproject/visual_test.v Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file maryhadalittlelamb.v
+    Info (12023): Found entity 1: maryhadalittlelamb File: W:/ECE241/finalproject/maryhadalittlelamb.v Line: 2
+    Info (12023): Found entity 2: rateDivider File: W:/ECE241/finalproject/maryhadalittlelamb.v Line: 68
 Warning (10236): Verilog HDL Implicit Net warning at notes.v(7): created implicit net for "enable" File: W:/ECE241/finalproject/notes.v Line: 7
-Critical Warning (10846): Verilog HDL Instantiation warning at finalproject.v(137): instance has no name File: W:/ECE241/finalproject/finalproject.v Line: 137
+Critical Warning (10846): Verilog HDL Instantiation warning at finalproject.v(138): instance has no name File: W:/ECE241/finalproject/finalproject.v Line: 138
 Warning (10227): Verilog HDL Port Declaration warning at notes.v(8): data type declaration for "sound" declares packed dimensions but the port declaration declaration does not File: W:/ECE241/finalproject/notes.v Line: 8
 Info (10499): HDL info at notes.v(4): see declaration for object "sound" File: W:/ECE241/finalproject/notes.v Line: 4
-Critical Warning (10846): Verilog HDL Instantiation warning at finalproject.v(164): instance has no name File: W:/ECE241/finalproject/finalproject.v Line: 164
+Critical Warning (10846): Verilog HDL Instantiation warning at finalproject.v(165): instance has no name File: W:/ECE241/finalproject/finalproject.v Line: 165
+Critical Warning (10846): Verilog HDL Instantiation warning at maryhadalittlelamb.v(8): instance has no name File: W:/ECE241/finalproject/maryhadalittlelamb.v Line: 8
 Info (12127): Elaborating entity "finalproject" for the top level hierarchy
-Info (12128): Elaborating entity "PS2_Keyboard" for hierarchy "PS2_Keyboard:comb_7" File: W:/ECE241/finalproject/finalproject.v Line: 137
+Info (12128): Elaborating entity "PS2_Keyboard" for hierarchy "PS2_Keyboard:comb_7" File: W:/ECE241/finalproject/finalproject.v Line: 138
 Info (12128): Elaborating entity "control_ps2" for hierarchy "PS2_Keyboard:comb_7|control_ps2:c" File: W:/ECE241/finalproject/PS2_keyboard.v Line: 49
 Info (12128): Elaborating entity "datapath_ps2" for hierarchy "PS2_Keyboard:comb_7|datapath_ps2:d" File: W:/ECE241/finalproject/PS2_keyboard.v Line: 50
 Info (12128): Elaborating entity "PS2_Controller" for hierarchy "PS2_Keyboard:comb_7|PS2_Controller:PS2" File: W:/ECE241/finalproject/PS2_keyboard.v Line: 82
 Info (12128): Elaborating entity "Altera_UP_PS2_Data_In" for hierarchy "PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Data_In:PS2_Data_In" File: W:/ECE241/finalproject/PS2 Controller/PS2_Controller.v Line: 246
 Info (12128): Elaborating entity "Altera_UP_PS2_Command_Out" for hierarchy "PS2_Keyboard:comb_7|PS2_Controller:PS2|Altera_UP_PS2_Command_Out:PS2_Command_Out" File: W:/ECE241/finalproject/PS2 Controller/PS2_Controller.v Line: 266
-Info (12128): Elaborating entity "notes" for hierarchy "notes:notes" File: W:/ECE241/finalproject/finalproject.v Line: 144
+Info (12128): Elaborating entity "notes" for hierarchy "notes:notes" File: W:/ECE241/finalproject/finalproject.v Line: 145
 Warning (10036): Verilog HDL or VHDL warning at notes.v(7): object "enable" assigned a value but never read File: W:/ECE241/finalproject/notes.v Line: 7
-Info (12128): Elaborating entity "visual" for hierarchy "visual:visual" File: W:/ECE241/finalproject/finalproject.v Line: 159
+Info (12128): Elaborating entity "visual" for hierarchy "visual:visual" File: W:/ECE241/finalproject/finalproject.v Line: 160
 Info (12128): Elaborating entity "vga_adapter" for hierarchy "visual:visual|vga_adapter:VGA" File: W:/ECE241/finalproject/visual.v Line: 59
 Info (12128): Elaborating entity "vga_address_translator" for hierarchy "visual:visual|vga_adapter:VGA|vga_address_translator:user_input_translator" File: W:/ECE241/finalproject/VGA Controller/vga_adapter.v Line: 192
 Info (12128): Elaborating entity "altsyncram" for hierarchy "visual:visual|vga_adapter:VGA|altsyncram:VideoMemory" File: W:/ECE241/finalproject/VGA Controller/vga_adapter.v Line: 213
@@ -3154,8 +3218,11 @@ Info (12133): Instantiated megafunction "visual:visual|datapath:d1|rightwhite_er
 Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_09h1.tdf
     Info (12023): Found entity 1: altsyncram_09h1 File: W:/ECE241/finalproject/db/altsyncram_09h1.tdf Line: 27
 Info (12128): Elaborating entity "altsyncram_09h1" for hierarchy "visual:visual|datapath:d1|rightwhite_erase:rwe|altsyncram:altsyncram_component|altsyncram_09h1:auto_generated" File: c:/desl/quartus18/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
-Info (12128): Elaborating entity "valid_key_LUT" for hierarchy "valid_key_LUT:comb_9" File: W:/ECE241/finalproject/finalproject.v Line: 164
-Info (12128): Elaborating entity "Audio_Controller" for hierarchy "Audio_Controller:Audio_Controller" File: W:/ECE241/finalproject/finalproject.v Line: 197
+Info (12128): Elaborating entity "valid_key_LUT" for hierarchy "valid_key_LUT:comb_25" File: W:/ECE241/finalproject/finalproject.v Line: 165
+Info (12128): Elaborating entity "maryhadalittlelamb" for hierarchy "maryhadalittlelamb:mhall" File: W:/ECE241/finalproject/finalproject.v Line: 171
+Info (12128): Elaborating entity "rateDivider" for hierarchy "maryhadalittlelamb:mhall|rateDivider:comb_3" File: W:/ECE241/finalproject/maryhadalittlelamb.v Line: 8
+Warning (10230): Verilog HDL assignment warning at maryhadalittlelamb.v(78): truncated value with size 32 to match size of target (27) File: W:/ECE241/finalproject/maryhadalittlelamb.v Line: 78
+Info (12128): Elaborating entity "Audio_Controller" for hierarchy "Audio_Controller:Audio_Controller" File: W:/ECE241/finalproject/finalproject.v Line: 204
 Info (12128): Elaborating entity "Altera_UP_Clock_Edge" for hierarchy "Audio_Controller:Audio_Controller|Altera_UP_Clock_Edge:Bit_Clock_Edges" File: W:/ECE241/finalproject/Audio_Controller/Audio_Controller.v Line: 182
 Info (12128): Elaborating entity "Altera_UP_Audio_In_Deserializer" for hierarchy "Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer" File: W:/ECE241/finalproject/Audio_Controller/Audio_Controller.v Line: 237
 Info (12128): Elaborating entity "Altera_UP_Audio_Bit_Counter" for hierarchy "Audio_Controller:Audio_Controller|Altera_UP_Audio_In_Deserializer:Audio_In_Deserializer|Altera_UP_Audio_Bit_Counter:Audio_Out_Bit_Counter" File: W:/ECE241/finalproject/Audio_Controller/Altera_UP_Audio_In_Deserializer.v Line: 159
@@ -3257,7 +3324,7 @@ Info (12133): Instantiated megafunction "Audio_Controller:Audio_Controller|Audio
 Info (12021): Found 1 design units, including 1 entities, in source file db/audio_clock_altpll.v
     Info (12023): Found entity 1: Audio_Clock_altpll File: W:/ECE241/finalproject/db/audio_clock_altpll.v Line: 29
 Info (12128): Elaborating entity "Audio_Clock_altpll" for hierarchy "Audio_Controller:Audio_Controller|Audio_Clock:Audio_Clock|altpll:altpll_component|Audio_Clock_altpll:auto_generated" File: c:/desl/quartus18/quartus/libraries/megafunctions/altpll.tdf Line: 897
-Info (12128): Elaborating entity "avconf" for hierarchy "avconf:avc" File: W:/ECE241/finalproject/finalproject.v Line: 204
+Info (12128): Elaborating entity "avconf" for hierarchy "avconf:avc" File: W:/ECE241/finalproject/finalproject.v Line: 211
 Warning (10230): Verilog HDL assignment warning at avconf.v(68): truncated value with size 32 to match size of target (16) File: W:/ECE241/finalproject/avconf/avconf.v Line: 68
 Warning (10230): Verilog HDL assignment warning at avconf.v(119): truncated value with size 32 to match size of target (6) File: W:/ECE241/finalproject/avconf/avconf.v Line: 119
 Warning (10230): Verilog HDL assignment warning at avconf.v(137): truncated value with size 32 to match size of target (16) File: W:/ECE241/finalproject/avconf/avconf.v Line: 137
@@ -3711,11 +3778,9 @@ Warning: RST port on the PLL is not properly connected on instance Audio_Control
     Info: Must be connected
 Warning: RST port on the PLL is not properly connected on instance visual:visual|vga_adapter:VGA|vga_pll:mypll|altpll:altpll_component|altpll_80u:auto_generated|generic_pll1. The reset port on the PLL should be connected. If the PLL loses lock for any reason, you might need to manually reset the PLL in order to re-establish lock to the reference clock. File: W:/ECE241/finalproject/db/altpll_80u.tdf Line: 33
     Info: Must be connected
-Warning (21074): Design contains 13 input pin(s) that do not drive logic
-    Warning (15610): No output dependent on input pin "KEY[1]" File: W:/ECE241/finalproject/finalproject.v Line: 46
+Warning (21074): Design contains 11 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "KEY[2]" File: W:/ECE241/finalproject/finalproject.v Line: 46
     Warning (15610): No output dependent on input pin "KEY[3]" File: W:/ECE241/finalproject/finalproject.v Line: 46
-    Warning (15610): No output dependent on input pin "SW[0]" File: W:/ECE241/finalproject/finalproject.v Line: 47
     Warning (15610): No output dependent on input pin "SW[1]" File: W:/ECE241/finalproject/finalproject.v Line: 47
     Warning (15610): No output dependent on input pin "SW[2]" File: W:/ECE241/finalproject/finalproject.v Line: 47
     Warning (15610): No output dependent on input pin "SW[3]" File: W:/ECE241/finalproject/finalproject.v Line: 47
@@ -3725,17 +3790,17 @@ Warning (21074): Design contains 13 input pin(s) that do not drive logic
     Warning (15610): No output dependent on input pin "SW[7]" File: W:/ECE241/finalproject/finalproject.v Line: 47
     Warning (15610): No output dependent on input pin "SW[8]" File: W:/ECE241/finalproject/finalproject.v Line: 47
     Warning (15610): No output dependent on input pin "SW[9]" File: W:/ECE241/finalproject/finalproject.v Line: 47
-Info (21057): Implemented 1789 device resources after synthesis - the final resource count might be different
+Info (21057): Implemented 2026 device resources after synthesis - the final resource count might be different
     Info (21058): Implemented 16 input pins
     Info (21059): Implemented 32 output pins
     Info (21060): Implemented 6 bidirectional pins
-    Info (21061): Implemented 1554 logic cells
+    Info (21061): Implemented 1791 logic cells
     Info (21064): Implemented 179 RAM segments
     Info (21065): Implemented 2 PLLs
 Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 454 warnings
-    Info: Peak virtual memory: 786 megabytes
-    Info: Processing ended: Fri Nov 29 07:07:35 2019
-    Info: Elapsed time: 00:01:32
-    Info: Total CPU time (on all processors): 00:00:49
+    Info: Peak virtual memory: 791 megabytes
+    Info: Processing ended: Fri Nov 29 12:29:45 2019
+    Info: Elapsed time: 00:01:31
+    Info: Total CPU time (on all processors): 00:00:47
 
 

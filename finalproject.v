@@ -97,6 +97,7 @@ wire [18:0] delay;
 
 wire [31:0]sound;
 reg snd;
+wire [6:0] mhall_keys;
 
 // State Machine Registers
 
@@ -137,7 +138,7 @@ PS2_Keyboard (
 );
 
 notes notes (
-	.note_select(pressed_key),
+	.note_select(SW[0] ? mhall_keys : pressed_key),
 	.clock(CLOCK_50),
 	.reset(~KEY[0]), //active high reset
 	.sound(sound)
@@ -146,7 +147,7 @@ notes notes (
 visual visual (
 	.CLOCK_50(CLOCK_50),
 	.reset(KEY[0]),	//active low reset	
-	.pressed_key(pressed_key),
+	.pressed_key(SW[0] ? mhall_keys : pressed_key),
 	//.KEY(KEY[1]),
 	.VGA_CLK(VGA_CLK),   						//	VGA Clock
 	.VGA_HS(VGA_HS),							//	VGA H_SYNC
@@ -161,6 +162,12 @@ visual visual (
 valid_key_LUT (
 	.pressed_key_in(pressed_key_in),
 	.pressed_key_out(pressed_key)
+);
+
+maryhadalittlelamb mhall(
+	.clock(CLOCK_50), 
+	.load(~KEY[1]), 
+	.mhall_keys(mhall_keys)
 );
 	
 Audio_Controller Audio_Controller (
