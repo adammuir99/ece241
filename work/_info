@@ -1,0 +1,210 @@
+m255
+K4
+z2
+13
+!s112 1.1
+!i10d 8192
+!i10e 25
+!i10f 100
+cModel Technology
+Z0 dW:/ECE241/finalproject
+vcontrol
+Z1 !s110 1574950300
+!i10b 1
+!s100 59JHoRPnb426F<jWC`c`H2
+IU[ghHYgiXDUBXmNfF4h_G2
+Z2 VDg1SIo80bB@j0V0VzS_@n1
+R0
+Z3 w1574949866
+Z4 8visual.v
+Z5 Fvisual.v
+L0 92
+Z6 OV;L;10.5b;63
+r1
+!s85 0
+31
+Z7 !s108 1574950300.000000
+Z8 !s107 background_mem.v|black_key.v|rightwhite.v|middlewhite.v|leftwhite.v|vga_pll.v|vga_controller.v|vga_address_translator.v|vga_adapter.v|visual.v|
+Z9 !s90 -reportprogress|300|visual.v|vga_adapter.v|vga_address_translator.v|vga_controller.v|vga_pll.v|leftwhite.v|middlewhite.v|rightwhite.v|black_key.v|background_mem.v|
+!i113 1
+Z10 tCvgOpt 0
+vcounter60hz
+Z11 !s110 1574950301
+!i10b 1
+!s100 47kUzDVfma[B6ID_cCzzY2
+Iz558WFP9bBWO9WD`HOKF92
+R2
+R0
+R3
+R4
+R5
+L0 293
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vdatapath
+R1
+!i10b 1
+!s100 6Vmjm8Y;b[?`??1kQl`U60
+Il3mjCLT;H]l_OJdcNJD=52
+R2
+R0
+R3
+R4
+R5
+L0 135
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vdetect_key
+R11
+!i10b 1
+!s100 Bk9=j6j9BeR9oTIWPJM0M3
+IThN7bF`_QW1;h5_dULVLn0
+R2
+R0
+R3
+R4
+R5
+L0 307
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vinitial_position
+R11
+!i10b 1
+!s100 Lck8KdY>XV0P=oNCLzohk1
+I7OnMAVFj>DPhf[EbQiQPO1
+R2
+R0
+R3
+R4
+R5
+L0 353
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10
+vvga_adapter
+Z12 !s110 1574778668
+!i10b 1
+!s100 g9bzPLIMZ<gge`CTPTPgW1
+I0HP^W<1Q<8UFDIKa>55og1
+R2
+R0
+w1572828414
+8vga_adapter.v
+Fvga_adapter.v
+L0 78
+R6
+r1
+!s85 0
+31
+Z13 !s108 1574778668.000000
+Z14 !s107 vga_pll.v|vga_controller.v|vga_address_translator.v|vga_adapter.v|visual.v|
+Z15 !s90 -reportprogress|300|visual.v|vga_adapter.v|vga_address_translator.v|vga_controller.v|vga_pll.v|
+!i113 1
+R10
+vvga_address_translator
+R12
+!i10b 1
+!s100 C0DfW0_9[5co`@boeR]Pi1
+ISe:<A`WEfVWVQ^XdIYXSb3
+R2
+R0
+w1572831670
+8vga_address_translator.v
+Fvga_address_translator.v
+L0 4
+R6
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R10
+vvga_controller
+Z16 !s110 1574778669
+!i10b 1
+!s100 e6ZP6iRSUQ77>][ahP0EJ1
+ITS]5dFPCKSB?gH[b`;iOY3
+R2
+R0
+Z17 w1572831674
+8vga_controller.v
+Fvga_controller.v
+L0 9
+R6
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R10
+vvga_pll
+R16
+!i10b 1
+!s100 4XSTjD`VEiamX^n1@5J`b3
+InS4CFLIEOHD9AEaVkoljA1
+R2
+R0
+R17
+8vga_pll.v
+Fvga_pll.v
+L0 36
+R6
+r1
+!s85 0
+31
+R13
+R14
+R15
+!i113 1
+R10
+vvisual
+R1
+!i10b 1
+!s100 j>?:DB_loNkNDG8o@Zz^]0
+IA`X9bLa_L^[U;n869i6ck3
+R2
+R0
+R3
+R4
+R5
+L0 1
+R6
+r1
+!s85 0
+31
+R7
+R8
+R9
+!i113 1
+R10

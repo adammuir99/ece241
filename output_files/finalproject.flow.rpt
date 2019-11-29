@@ -1,5 +1,5 @@
 Flow report for finalproject
-Fri Nov 22 15:56:42 2019
+Fri Nov 29 04:16:50 2019
 Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
 
 
@@ -40,18 +40,18 @@ refer to the applicable agreement for further details.
 +-----------------------------------------------------------------------------------+
 ; Flow Summary                                                                      ;
 +---------------------------------+-------------------------------------------------+
-; Flow Status                     ; Successful - Fri Nov 22 15:56:22 2019           ;
+; Flow Status                     ; Successful - Fri Nov 29 04:16:23 2019           ;
 ; Quartus Prime Version           ; 18.0.0 Build 614 04/24/2018 SJ Standard Edition ;
 ; Revision Name                   ; finalproject                                    ;
 ; Top-level Entity Name           ; finalproject                                    ;
 ; Family                          ; Cyclone V                                       ;
 ; Device                          ; 5CSEMA5F31C6                                    ;
 ; Timing Models                   ; Final                                           ;
-; Logic utilization (in ALMs)     ; 469 / 32,070 ( 1 % )                            ;
-; Total registers                 ; 473                                             ;
+; Logic utilization (in ALMs)     ; 795 / 32,070 ( 2 % )                            ;
+; Total registers                 ; 567                                             ;
 ; Total pins                      ; 54 / 457 ( 12 % )                               ;
 ; Total virtual pins              ; 0                                               ;
-; Total block memory bits         ; 246,784 / 4,065,280 ( 6 % )                     ;
+; Total block memory bits         ; 266,491 / 4,065,280 ( 7 % )                     ;
 ; Total DSP Blocks                ; 0 / 87 ( 0 % )                                  ;
 ; Total HSSI RX PCSs              ; 0                                               ;
 ; Total HSSI PMA RX Deserializers ; 0                                               ;
@@ -67,7 +67,7 @@ refer to the applicable agreement for further details.
 +-------------------+---------------------+
 ; Option            ; Setting             ;
 +-------------------+---------------------+
-; Start date & time ; 11/22/2019 15:54:24 ;
+; Start date & time ; 11/29/2019 04:13:23 ;
 ; Main task         ; Compilation         ;
 ; Revision Name     ; finalproject        ;
 +-------------------+---------------------+
@@ -78,7 +78,7 @@ refer to the applicable agreement for further details.
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 ; Assignment Name                     ; Value                                  ; Default Value ; Entity Name ; Section Id ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
-; COMPILER_SIGNATURE_ID               ; 167746773770655.157445606405296        ; --            ; --          ; --         ;
+; COMPILER_SIGNATURE_ID               ; 167746773771540.157501880202792        ; --            ; --          ; --         ;
 ; MAX_CORE_JUNCTION_TEMP              ; 85                                     ; --            ; --          ; --         ;
 ; MIN_CORE_JUNCTION_TEMP              ; 0                                      ; --            ; --          ; --         ;
 ; PARTITION_COLOR                     ; -- (Not supported for targeted family) ; --            ; --          ; Top        ;
@@ -87,6 +87,8 @@ refer to the applicable agreement for further details.
 ; POWER_BOARD_THERMAL_MODEL           ; None (CONSERVATIVE)                    ; --            ; --          ; --         ;
 ; POWER_PRESET_COOLING_SOLUTION       ; 23 MM HEAT SINK WITH 200 LFPM AIRFLOW  ; --            ; --          ; --         ;
 ; PROJECT_OUTPUT_DIRECTORY            ; output_files                           ; --            ; --          ; --         ;
+; SEARCH_PATH                         ; w:\ece241\finalproject\ps2 controller  ; --            ; --          ; --         ;
+; SEARCH_PATH                         ; w:\ece241\finalproject\vga controller  ; --            ; --          ; --         ;
 +-------------------------------------+----------------------------------------+---------------+-------------+------------+
 
 
@@ -95,11 +97,11 @@ refer to the applicable agreement for further details.
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 ; Module Name          ; Elapsed Time ; Average Processors Used ; Peak Virtual Memory ; Total CPU Time (on all processors) ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
-; Analysis & Synthesis ; 00:00:40     ; 1.0                     ; 770 MB              ; 00:00:32                           ;
-; Fitter               ; 00:00:51     ; 1.1                     ; 2685 MB             ; 00:01:39                           ;
-; Assembler            ; 00:00:10     ; 1.0                     ; 740 MB              ; 00:00:08                           ;
-; Timing Analyzer      ; 00:00:17     ; 1.2                     ; 1104 MB             ; 00:00:12                           ;
-; Total                ; 00:01:58     ; --                      ; --                  ; 00:02:31                           ;
+; Analysis & Synthesis ; 00:01:17     ; 1.0                     ; 787 MB              ; 00:00:44                           ;
+; Fitter               ; 00:01:00     ; 1.1                     ; 2698 MB             ; 00:01:59                           ;
+; Assembler            ; 00:00:12     ; 1.0                     ; 758 MB              ; 00:00:08                           ;
+; Timing Analyzer      ; 00:00:23     ; 1.3                     ; 1113 MB             ; 00:00:15                           ;
+; Total                ; 00:02:52     ; --                      ; --                  ; 00:03:06                           ;
 +----------------------+--------------+-------------------------+---------------------+------------------------------------+
 
 
@@ -108,10 +110,10 @@ refer to the applicable agreement for further details.
 +----------------------+------------------+------------+------------+----------------+
 ; Module Name          ; Machine Hostname ; OS Name    ; OS Version ; Processor type ;
 +----------------------+------------------+------------+------------+----------------+
-; Analysis & Synthesis ; BA3155WS09       ; Windows 10 ; 10.0       ; x86_64         ;
-; Fitter               ; BA3155WS09       ; Windows 10 ; 10.0       ; x86_64         ;
-; Assembler            ; BA3155WS09       ; Windows 10 ; 10.0       ; x86_64         ;
-; Timing Analyzer      ; BA3155WS09       ; Windows 10 ; 10.0       ; x86_64         ;
+; Analysis & Synthesis ; BA3135WS07       ; Windows 10 ; 10.0       ; x86_64         ;
+; Fitter               ; BA3135WS07       ; Windows 10 ; 10.0       ; x86_64         ;
+; Assembler            ; BA3135WS07       ; Windows 10 ; 10.0       ; x86_64         ;
+; Timing Analyzer      ; BA3135WS07       ; Windows 10 ; 10.0       ; x86_64         ;
 +----------------------+------------------+------------+------------+----------------+
 
 

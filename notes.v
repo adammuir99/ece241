@@ -1,7 +1,6 @@
-module notes (note_select, clock, reset, sound, ps2_key_pressed);
+module notes (note_select, clock, reset, sound);
 	input [7:0] note_select;
 	input clock, reset;
-	input ps2_key_pressed;
 	output sound;
 	reg [17:0] Q;
 	reg snd;
@@ -17,7 +16,6 @@ module notes (note_select, clock, reset, sound, ps2_key_pressed);
 		if (Q == 18'b0)
 			snd <= !snd;
 		
-//		if (ps2_key_pressed) begin
 		case (note_select)
 			7'h49:	//. 
 			begin
@@ -273,6 +271,5 @@ module notes (note_select, clock, reset, sound, ps2_key_pressed);
 			end
 			default:;
 		endcase
-//		end
 	end
 endmodule

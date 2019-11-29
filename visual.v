@@ -2,7 +2,8 @@ module visual
 	(
 		CLOCK_50,						//	On Board 50 MHz
 		// Your inputs and outputs here
-		reset,		
+		reset,
+		pressed_key,
 		// The ports below are for the VGA output.  Do not change.
 		VGA_CLK,   						//	VGA Clock
 		VGA_HS,							//	VGA H_SYNC
@@ -15,7 +16,8 @@ module visual
 	);
 
 	input CLOCK_50;							//	50 MHz
-	input reset;					
+	input reset;
+	input [7:0] pressed_key;
 	// Do not change the following outputs
 	output	VGA_CLK;   				//	VGA Clock
 	output	VGA_HS;					//	VGA H_SYNC
@@ -29,10 +31,13 @@ module visual
 	// Create the colour, x, y and writeEn wires that are inputs to the controller.
 
 	wire [2:0] colour;
-	wire [7:0] x;
-	wire [6:0] y;
+	wire [8:0] x;
+	wire [7:0] y;
+	reg [8:0] xnew;
+	reg [7:0] ynew;
 	wire writeEn;
-
+	wire draw, pause, erase, done_draw, done_pause, done_erase, idle;
+	assign writeEn = draw | erase;
 	// Create an Instance of a VGA controller - there can be only one!
 	// Define the number of colours as well as the initial background
 	// image file (.MIF) for the controller.
@@ -57,5 +62,483 @@ module visual
 		defparam VGA.BITS_PER_COLOUR_CHANNEL = 1;
 		defparam VGA.BACKGROUND_IMAGE = "keyboard.mif";
 		
+	/*	always @(posedge CLOCK_50) begin
+			xnew <= x;
+			ynew <= y;
+		end
+		*/
+		control c1(	.resetn(reset),
+						.clock(CLOCK_50),
+						.pressed_key(pressed_key),
+						.draw(draw), 
+						.pause(pause),
+						.erase(erase),
+						.idle(idle),
+						.done_draw(done_draw),
+						.done_pause(done_pause),
+						.done_erase(done_erase)
+					);
+					
+		datapath d1(.resetn(reset), 
+						.clock(CLOCK_50), 
+						.pressed_key(pressed_key), 
+						.draw(draw),
+						.pause(pause),
+						.erase(erase),
+						.idle(idle),
+						.done_draw(done_draw),
+						.done_pause(done_pause),
+						.done_erase(done_erase),
+						.colour_out(colour),
+						.xpos(x),
+						.ypos(y)
+					);
+		
+endmodule
+//70 top y
+module control (resetn, clock, pressed_key, draw, pause, erase, idle, done_draw, done_pause, done_erase);
+	input resetn, clock, done_draw, done_pause, done_erase;
+	input [7:0] pressed_key;
+	output reg draw, pause, erase, idle;
+	reg [1:0] current_state, next_state;
+	localparam 	S_IDLE = 2'd0,
+					S_DRAW = 2'd1,
+					S_PAUSE = 2'd2,
+					S_ERASE = 2'd3;
+	// state table				
+	always @(*) begin
+		case (current_state)
+			S_IDLE:	next_state = (pressed_key == 8'h0) ? S_IDLE : S_DRAW;		//Go to S_DRAW when a valid key is pressed
+			S_DRAW:	next_state = done_draw ? S_PAUSE : S_DRAW;					//Go to S_PAUSE when done drawing
+			S_PAUSE:	next_state = done_pause ? S_ERASE : S_PAUSE;					//Go to S_ERASE when done pausing
+			S_ERASE:	next_state = done_erase ? S_IDLE : S_ERASE;					//Go to S_IDLE when done erasing
+			default: next_state = S_IDLE;
+		endcase
+	end
+	
+	// enable signals
+	always@(*) begin
+		draw = 1'b0;
+		pause = 1'b0;
+		erase = 1'b0;
+		idle = 1'b0;
+		
+		case (current_state)
+			S_IDLE:	idle = 1'b1;
+			S_DRAW:	draw = 1'b1;
+			S_PAUSE: pause = 1'b1;
+			S_ERASE:	erase = 1'b1;
+		endcase
+	end
+	
+	// state registers
+	always @(posedge clock) begin
+		if (resetn == 0) //active low reset
+			current_state <= S_IDLE;
+		else
+			current_state <= next_state;
+	end
 endmodule
 
+module datapath (resetn, clock, pressed_key, draw, pause, erase, idle, done_draw, done_pause, done_erase, colour_out, xpos, ypos);
+	input resetn, clock, draw, pause, erase, idle;
+	input [7:0] pressed_key;
+	output reg done_draw, done_pause, done_erase;
+	wire enable;
+	wire [1:0] key_type;
+	reg [7:0] last_pressed;
+	wire [23:0] colour;
+	wire [8:0] xinitial;
+	wire [7:0] yinitial = 7'd70;		//all the sprites start at the same y value
+	reg [16:0] fullcounter;
+	reg [8:0] xcounter;
+	reg [7:0] ycounter;
+	output reg [3:0] colour_out;
+	output reg [8:0] xpos;
+	output reg [7:0] ypos;
+	
+	localparam  leftwhite		= 2'd0,
+					middlewhite		= 2'd1,
+					rightwhite		= 2'd2,
+					black_key		= 2'd3;
+	
+	counter60hz c60(.resetn(resetn), .clock(clock), .enable(enable));
+	detect_key dk(.pressed_key(last_pressed), .key_type(key_type));
+	initial_position ip(.pressed_key(last_pressed), .xinitial(xinitial));
+	leftwhite lw(.address(fullcounter[10:0]+1), .clock(clock), .q(colour[2:0]));
+	middlewhite mw(.address(fullcounter[10:0]+1), .clock(clock), .q(colour[5:3]));
+	rightwhite rw(.address(fullcounter[10:0]+1), .clock(clock), .q(colour[8:6]));
+	black_key bk(.address(fullcounter[8:0]), .clock(clock), .q(colour[11:9]));
+	background_mem bg(.address(fullcounter), .clock(clock), .q(colour[14:12]));
+	leftwhite_erase lwe (.address(fullcounter[10:0]+1), .clock(clock), .q(colour[17:15]));
+	middlewhite_erase mwe (.address(fullcounter[10:0]+1), .clock(clock), .q(colour[20:18]));
+	rightwhite_erase rwe (.address(fullcounter[10:0]+1), .clock(clock), .q(colour[23:21]));
+	
+	always @(posedge clock) begin
+	done_draw <= 1'b0;
+	done_pause <= 1'b0;
+	done_erase <= 1'b0;
+		if (resetn == 0) begin
+			xcounter <= 9'd0;
+			ycounter <= 8'd0;
+			fullcounter <= 17'd0;
+		end
+		if (idle) begin
+			last_pressed <= pressed_key;
+		end
+		else if (draw) begin
+			case (key_type)
+				leftwhite: begin
+								xpos <= xinitial + xcounter;
+								ypos <= yinitial + ycounter;
+								colour_out <= colour[2:0];
+								fullcounter <= fullcounter + 1'b1;
+								xcounter <= xcounter + 1'b1;
+								if (xcounter == 9'd12)	begin				//sprite is 13x80
+									xcounter <= 9'd0;
+									ycounter <= ycounter + 1'b1;
+								end
+								if (fullcounter == 17'd1039) begin
+									fullcounter <= 17'd0;
+									done_draw <= 1'b1;
+									xcounter <= 9'b0;
+									ycounter <= 8'b0;
+								end
+				end
+				middlewhite: begin
+								xpos <= xinitial + xcounter;
+								ypos <= yinitial + ycounter;
+								colour_out <= colour[5:3];
+								fullcounter <= fullcounter + 1'b1;
+								xcounter <= xcounter + 1'b1;
+								if (xcounter == 9'd12)	begin				//sprite is 13x80
+									xcounter <= 9'd0;
+									ycounter <= ycounter + 1'b1;
+								end
+								if (fullcounter == 17'd1039) begin
+									fullcounter <= 17'd0;
+									done_draw <= 1'b1;
+									xcounter <= 9'b0;
+									ycounter <= 8'b0;
+								end
+				end
+				rightwhite: begin
+								xpos <= xinitial + xcounter;
+								ypos <= yinitial + ycounter;
+								colour_out <= colour[8:6];
+								fullcounter <= fullcounter + 1'b1;
+								xcounter <= xcounter + 1'b1;
+								if (xcounter == 9'd12)	begin				//sprite is 13x80
+									xcounter <= 9'd0;
+									ycounter <= ycounter + 1'b1;
+								end
+								if (fullcounter == 17'd1039) begin
+									fullcounter <= 17'd0;
+									done_draw <= 1'b1;
+									xcounter <= 9'b0;
+									ycounter <= 8'b0;
+								end
+				end
+				black_key: begin
+								xpos <= xinitial + xcounter;
+								ypos <= yinitial + ycounter;
+								colour_out <= colour[11:9];
+								fullcounter <= fullcounter + 1'b1;
+								xcounter <= xcounter + 1'b1;
+								if (xcounter == 9'd6)	begin				//sprite is 7x47
+									xcounter <= 9'd0;
+									ycounter <= ycounter + 1'b1;
+								end
+								if (fullcounter == 17'd328) begin
+									fullcounter <= 17'd0;
+									done_draw <= 1'b1;
+									xcounter <= 9'b0;
+									ycounter <= 8'b0;
+								end
+				end
+			endcase
+		end
+		else if (pause) begin
+			fullcounter <= 17'd0;
+			xcounter <= 9'd0;
+			ycounter <= 8'd0;
+			//fullcounter <= 320 * 70 + xinitial;
+			fullcounter <= 17'b0;
+			if (enable)
+				done_pause <= 1'b1;
+		end
+		else if (erase) begin
+		/*
+			xpos <= xcounter;
+			ypos <= ycounter;
+			colour_out <= colour[14:12];
+			xcounter <= xcounter + 1'b1;
+			fullcounter <= fullcounter + 1'b1;
+			if (xcounter == 9'd320) begin
+				xcounter <= 9'd0;
+				ycounter <= ycounter + 1;
+			end
+			if (ycounter == 8'd240) begin
+				xcounter <= 9'd0;
+				ycounter <= 8'd0;
+				fullcounter <= 17'd0;
+				done_erase <= 1'b1;
+			end*/
+			case (key_type)
+				leftwhite: begin
+								xpos <= xinitial + xcounter;
+								ypos <= yinitial + ycounter;
+								colour_out <= colour[17:15];
+								fullcounter <= fullcounter + 1'b1;
+								xcounter <= xcounter + 1'b1;
+								if (xcounter == 9'd12)	begin				//sprite is 13x80
+									xcounter <= 9'd0;
+									ycounter <= ycounter + 1'b1;
+								end
+								if (ycounter == 80 && xcounter == 11) begin
+									fullcounter <= 17'd0;
+									done_erase <= 1'b1;
+									xcounter <= 9'b0;
+									ycounter <= 8'b0;
+								end
+							
+							end
+				middlewhite: begin
+								xpos <= xinitial + xcounter;
+								ypos <= yinitial + ycounter;
+								colour_out <= colour[20:18];
+								fullcounter <= fullcounter + 1'b1;
+								xcounter <= xcounter + 1'b1;
+								if (xcounter == 9'd12)	begin				//sprite is 13x80
+									xcounter <= 9'd0;
+									ycounter <= ycounter + 1'b1;
+								end
+								if (ycounter == 80 && xcounter == 11) begin
+									fullcounter <= 17'd0;
+									done_erase <= 1'b1;
+									xcounter <= 9'b0;
+									ycounter <= 8'b0;
+								end
+							
+							end
+				rightwhite: begin
+								xpos <= xinitial + xcounter;
+								ypos <= yinitial + ycounter;
+								colour_out <= colour[23:21];
+								fullcounter <= fullcounter + 1'b1;
+								xcounter <= xcounter + 1'b1;
+								if (xcounter == 9'd12)	begin				//sprite is 13x80
+									xcounter <= 9'd0;
+									ycounter <= ycounter + 1'b1;
+								end
+								else if (ycounter == 79 && xcounter == 11) begin
+									fullcounter <= 17'd0;
+									done_erase <= 1'b1;
+									xcounter <= 9'b0;
+									ycounter <= 8'b0;
+								end
+							
+								
+								
+				end
+				black_key: begin
+								xpos <= xinitial + xcounter;
+								ypos <= yinitial + ycounter;
+								//colour_out <= colour[14:12];
+								colour_out <= 3'b000;
+								fullcounter <= fullcounter + 1'b1;
+								//xcounter <= xcounter + 1'b1;
+								if ((fullcounter - xinitial) % 320 == 6) begin
+									fullcounter <= fullcounter + 314;	//320 width of the screen - 7
+								end
+								if (xcounter == 9'd6)	begin				//sprite is 7x47
+									xcounter <= 9'd0;
+									ycounter <= ycounter + 1'b1;
+								end
+								else if (ycounter == 46 && xcounter == 5) begin
+									fullcounter <= 17'd0;
+									done_erase <= 1'b1;
+									xcounter <= 9'b0;
+									ycounter <= 8'b0;
+								end
+								else begin
+								xcounter <= xcounter + 1'b1;
+								end
+							end
+			endcase/*
+			if (key_type == black_key) begin
+				xpos <= xinitial + xcounter;
+				ypos <= yinitial + ycounter;
+				colour_out <= colour[14:12];
+				//colour_out <= 3'b000;
+				fullcounter <= fullcounter + 1'b1;
+				//xcounter <= xcounter + 1'b1;
+				if ((fullcounter - xinitial) % 320 == 6) begin
+					fullcounter <= fullcounter + 314;	//320 width of the screen - 7
+				end
+				if (xcounter == 9'd6)	begin				//sprite is 7x47
+					xcounter <= 9'd0;
+					ycounter <= ycounter + 1'b1;
+				end
+				else if (ycounter == 46 && xcounter == 5) begin
+					fullcounter <= 17'd0;
+					done_erase <= 1'b1;
+					xcounter <= 9'b0;
+					ycounter <= 8'b0;
+				end
+				else begin
+				xcounter <= xcounter + 1'b1;
+				end*/
+				/*
+				colour_out <= 3'b000;
+				xpos <= xinitial + xcounter;
+				ypos <= yinitial + ycounter;
+				xcounter <= xcounter + 1'b1;
+				if (xcounter == 6) begin
+					xcounter <= 9'd0;
+					ycounter <= ycounter + 1'b1;
+				end
+				if (ycounter <	47) begin
+					done_erase <= 1'b1;
+					xcounter <= 9'b0;
+					ycounter <= 8'b0;
+				end*/			
+/*			
+			else begin
+				xpos <= xinitial + xcounter;
+				ypos <= yinitial + ycounter;
+				colour_out <= colour[14:12];
+				fullcounter <= fullcounter + 1'b1;
+			//	xcounter <= xcounter + 1'b1;
+
+				if ((fullcounter - xinitial) % 320 == 13) begin
+					fullcounter <= fullcounter + 307;	//320 width of the screen - 7
+				if (xcounter == 9'd12)	begin				//sprite is 13x80
+					xcounter <= 9'd0;
+					ycounter <= ycounter + 1'b1;
+				end
+				else if (ycounter == 80) begin
+				//if (fullcounter == (320 * 70 + xinitial + 1039)) begin
+					fullcounter <= 17'd0;
+					done_erase <= 1'b1;
+					xcounter <= 9'b0;
+					ycounter <= 8'b0;
+				end
+				else begin
+				xcounter <= xcounter + 1'b1;
+				end
+			end
+		end*/
+		end
+		else begin						//when no key is pressed reset the counters so there is no carry-over from the last drawing
+			xcounter <= 9'b0;
+			ycounter <= 8'b0;
+			fullcounter <= 17'b0;
+		end
+	end
+endmodule
+
+//downcounter that will reach 0 60 times per second
+module counter60hz (resetn, clock, enable);
+	input resetn, clock;
+	reg [19:0] Q;
+	output enable;
+	assign enable = ~|Q;
+
+	always @(posedge clock) begin
+		if (Q == 27'b0 || !resetn)
+			Q <= 20'd833333; // 60Hz
+		else
+			Q <= Q - 1;
+	end
+endmodule
+
+module detect_key (pressed_key, key_type);
+	input [7:0] pressed_key;
+	output reg [1:0] key_type;
+	
+	localparam  leftwhite		= 2'd0,
+					middlewhite		= 2'd1,
+					rightwhite		= 2'd2,
+					black_key		= 2'd3;
+	always @(*) begin
+		if (
+		pressed_key == 8'h15 ||
+		pressed_key == 8'h2D ||
+		pressed_key == 8'h43 ||
+		pressed_key == 8'h54 ||
+		pressed_key == 8'h21 ||
+		pressed_key == 8'h31
+		)
+			key_type = leftwhite;
+		else if (
+		pressed_key == 8'h1D ||
+		pressed_key == 8'h2C ||
+		pressed_key == 8'h35 ||
+		pressed_key == 8'h44 ||
+		pressed_key == 8'h5B ||
+		pressed_key == 8'h1A ||
+		pressed_key == 8'h2A ||
+		pressed_key == 8'h3A ||
+		pressed_key == 8'h41
+		)
+			key_type = middlewhite;
+		else if (
+		pressed_key == 8'h24 ||
+		pressed_key == 8'h3C ||
+		pressed_key == 8'h4D ||
+		pressed_key == 8'h22 ||
+		pressed_key == 8'h32 ||
+		pressed_key == 8'h49
+		)
+			key_type = rightwhite;
+		else if (pressed_key == 8'h0);
+		else
+			key_type = black_key;
+	end
+
+endmodule
+
+module initial_position(input [7:0] pressed_key, output reg [8:0] xinitial);
+	always @(*) begin
+		case (pressed_key)
+			8'h15: xinitial = 9'd13;
+			8'h1E: xinitial = 9'd23;
+			8'h1D: xinitial = 9'd27;
+			8'h26: xinitial = 9'd37;
+			8'h24: xinitial = 9'd41;
+			8'h2D: xinitial = 9'd55;
+			8'h2E: xinitial = 9'd65;
+			8'h2C: xinitial = 9'd69;
+			8'h36: xinitial = 9'd79;
+			8'h35: xinitial = 9'd83;
+			8'h3D: xinitial = 9'd93;
+			8'h3C: xinitial = 9'd97;
+			8'h43: xinitial = 9'd111;
+			8'h46: xinitial = 9'd121;
+			8'h44: xinitial = 9'd125;
+			8'h45: xinitial = 9'd135;
+			8'h4D: xinitial = 9'd139;
+			8'h54: xinitial = 9'd153;
+			8'h55: xinitial = 9'd163;
+			8'h5B: xinitial = 9'd167;
+			8'h1C: xinitial = 9'd177;
+			8'h1A: xinitial = 9'd181;
+			8'h1B: xinitial = 9'd191;
+			8'h22: xinitial = 9'd195;
+			8'h21: xinitial = 9'd209;
+			8'h2B: xinitial = 9'd219;
+			8'h2A: xinitial = 9'd223;
+			8'h34: xinitial = 9'd233;
+			8'h32: xinitial = 9'd237;
+			8'h31: xinitial = 9'd251;
+			8'h3B: xinitial = 9'd261;
+			8'h3A: xinitial = 9'd265;
+			8'h42: xinitial = 9'd275;
+			8'h41: xinitial = 9'd279;
+			8'h4B: xinitial = 9'd289;
+			8'h49: xinitial = 9'd293;
+			default: xinitial = 9'd0;
+		endcase
+	end
+endmodule

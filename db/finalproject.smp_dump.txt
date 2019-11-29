@@ -5,6 +5,13 @@ mSetup_ST.0000 0 0 0
 mSetup_ST.0001 1 0 1 
 mSetup_ST.0010 1 1 0 
 
+State Machine - |finalproject|visual:visual|control:c1|current_state
+Name current_state.S_ERASE current_state.S_PAUSE current_state.S_DRAW current_state.S_IDLE 
+current_state.S_IDLE 0 0 0 0 
+current_state.S_DRAW 0 0 1 1 
+current_state.S_PAUSE 0 1 0 1 
+current_state.S_ERASE 1 0 0 1 
+
 State Machine - |finalproject|PS2_Keyboard:comb_7|PS2_Controller:PS2|s_ps2_transceiver
 Name s_ps2_transceiver.PS2_STATE_3_END_TRANSFER s_ps2_transceiver.PS2_STATE_2_COMMAND_OUT s_ps2_transceiver.PS2_STATE_1_DATA_IN s_ps2_transceiver.PS2_STATE_0_IDLE s_ps2_transceiver.PS2_STATE_4_END_DELAYED 
 s_ps2_transceiver.PS2_STATE_0_IDLE 0 0 0 0 0 
@@ -31,3 +38,9 @@ s_ps2_receiver.PS2_STATE_1_WAIT_FOR_DATA 0 0 1 1 0
 s_ps2_receiver.PS2_STATE_2_DATA_IN 0 1 0 1 0 
 s_ps2_receiver.PS2_STATE_3_PARITY_IN 1 0 0 1 0 
 s_ps2_receiver.PS2_STATE_4_STOP_IN 0 0 0 1 1 
+
+State Machine - |finalproject|PS2_Keyboard:comb_7|control_ps2:c|current_state
+Name current_state.S_IDLE current_state.S_UNPRESSED current_state.S_PRESSED 
+current_state.S_IDLE 0 0 0 
+current_state.S_PRESSED 1 0 1 
+current_state.S_UNPRESSED 1 1 0 

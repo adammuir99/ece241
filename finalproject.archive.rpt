@@ -1,0 +1,110 @@
+Archive Project report for finalproject
+Thu Nov 28 14:02:36 2019
+Quartus Prime Version 18.0.0 Build 614 04/24/2018 SJ Standard Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Archive Project Summary
+  3. Archive Project Messages
+  4. Files Archived
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2018  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------+
+; Archive Project Summary                                        ;
++------------------------+---------------------------------------+
+; Archive Project Status ; Successful - Thu Nov 28 14:02:36 2019 ;
+; Revision Name          ; finalproject                          ;
+; Top-level Entity Name  ; finalproject                          ;
+; Family                 ; Cyclone V                             ;
++------------------------+---------------------------------------+
+
+
++--------------------------+
+; Archive Project Messages ;
++--------------------------+
+Info: File Set 'Source control' contains:
+    Info: Project source and settings files
+    Info: Automatically detected source files
+Warning: Hierarchical Platform Designer systems and custom IP components(_hw.tcl and associated files) are not archived by the Quartus Archiver
+Info: Archive will store files relative to the closest common parent directory
+Info (13213): Using common directory W:/ECE241/finalproject/
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated archive 'W:/ECE241/backup/backup1.qar'
+Info: ----------------------------------------------------------
+Info: ----------------------------------------------------------
+Info: Generated report 'finalproject.archive.rpt'
+Info (23030): Evaluation of Tcl script c:/desl/quartus18/quartus/common/tcl/apps/qpm/qar.tcl was successful
+Info: Quartus Prime Shell was successful. 0 errors, 1 warning
+    Info: Peak virtual memory: 750 megabytes
+    Info: Processing ended: Thu Nov 28 14:02:36 2019
+    Info: Elapsed time: 00:00:09
+    Info: Total CPU time (on all processors): 00:00:03
+
+
++----------------------------------------------------+
+; Files Archived                                     ;
++----------------------------------------------------+
+; File Name                                          ;
++----------------------------------------------------+
+; Audio_Controller/Altera_UP_Audio_Bit_Counter.v     ;
+; Audio_Controller/Altera_UP_Audio_In_Deserializer.v ;
+; Audio_Controller/Altera_UP_Audio_Out_Serializer.v  ;
+; Audio_Controller/Altera_UP_Clock_Edge.v            ;
+; Audio_Controller/Altera_UP_SYNC_FIFO.v             ;
+; Audio_Controller/Audio_Clock.v                     ;
+; Audio_Controller/Audio_Controller.v                ;
+; avconf/avconf.v                                    ;
+; avconf/I2C_Controller.v                            ;
+; black_key.mif                                      ;
+; finalproject.qpf                                   ;
+; finalproject.qsf                                   ;
+; finalproject.v                                     ;
+; finalproject_assignment_defaults.qdf               ;
+; keyboard.mif                                       ;
+; leftwhite.mif                                      ;
+; middlewhite.mif                                    ;
+; notes.v                                            ;
+; PS2 Controller/Altera_UP_PS2_Command_Out.v         ;
+; PS2 Controller/Altera_UP_PS2_Data_In.v             ;
+; PS2 Controller/PS2_Controller.v                    ;
+; PS2_keyboard.v                                     ;
+; rightwhite.mif                                     ;
+; sprites/background_mem.v                           ;
+; sprites/black_key.v                                ;
+; sprites/leftwhite.v                                ;
+; sprites/middlewhite.v                              ;
+; sprites/rightwhite.v                               ;
+; valid_key_LUT.v                                    ;
+; VGA Controller/vga_adapter.v                       ;
+; VGA Controller/vga_address_translator.v            ;
+; VGA Controller/vga_controller.v                    ;
+; VGA Controller/vga_pll.v                           ;
+; visual.v                                           ;
+; visual_test.v                                      ;
++----------------------------------------------------+
+
+

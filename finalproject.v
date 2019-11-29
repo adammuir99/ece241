@@ -87,7 +87,7 @@ wire				audio_out_allowed;
 wire		[31:0]	left_channel_audio_out;
 wire		[31:0]	right_channel_audio_out;
 wire				write_audio_out;
-wire		[7:0]	pressed_key;
+wire		[7:0]	pressed_key_in, pressed_key;
 wire 				ps2_key_pressed;
 
 // Internal Registers
@@ -109,20 +109,10 @@ reg snd;
  *                             Sequential Logic                              *
  *****************************************************************************/
 
-//always @(posedge CLOCK_50)
-//	if(delay_cnt == delay) begin
-//		delay_cnt <= 0;
-//		snd <= !snd;
-//	end else delay_cnt <= delay_cnt + 1;
 
 /*****************************************************************************
  *                            Combinational Logic                            *
  *****************************************************************************/
-
-//assign delay = {SW[3:0], 15'd3000};
-
-//wire [31:0] sound = (SW == 0) ? 0 : snd ? 32'd10000000 : -32'd10000000;
-
 
 assign read_audio_in			= audio_in_available & audio_out_allowed;
 
@@ -143,21 +133,21 @@ PS2_Keyboard (
 	.PS2_DAT(PS2_DAT),
 	
 	// Outputs
-	.pressed_key(pressed_key),
-	.ps2_key_pressed(ps2_key_pressed)
+	.pressed_key(pressed_key_in)
 );
 
 notes notes (
 	.note_select(pressed_key),
 	.clock(CLOCK_50),
 	.reset(~KEY[0]), //active high reset
-	.sound(sound),
-	.ps2_key_pressed(ps2_key_pressed)
+	.sound(sound)
 );
 
 visual visual (
 	.CLOCK_50(CLOCK_50),
-	.reset(KEY[0]),	//active low reset		
+	.reset(KEY[0]),	//active low reset	
+	.pressed_key(pressed_key),
+	//.KEY(KEY[1]),
 	.VGA_CLK(VGA_CLK),   						//	VGA Clock
 	.VGA_HS(VGA_HS),							//	VGA H_SYNC
 	.VGA_VS(VGA_VS),							//	VGA V_SYNC
@@ -166,6 +156,11 @@ visual visual (
 	.VGA_R(VGA_R),   						//	VGA Red[9:0]
 	.VGA_G(VGA_G),	 						//	VGA Green[9:0]
 	.VGA_B(VGA_B)   						//	VGA Blue[9:0]
+);
+
+valid_key_LUT (
+	.pressed_key_in(pressed_key_in),
+	.pressed_key_out(pressed_key)
 );
 	
 Audio_Controller Audio_Controller (
